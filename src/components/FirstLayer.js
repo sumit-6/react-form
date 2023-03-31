@@ -22,7 +22,7 @@ function FirstLayer() {
                
                <div className="form-group col-md-4">
                 <label>Description: </label>
-                <input type="text" name="description" className="form-control" placeholder="Enter Description" onChange={(e)=> handleinputchange(e)}/>
+                <textarea type="text" name="description" className="form-control" placeholder="Enter Description" onChange={(e)=> handleinputchange(e)} rows="4" cols="40" />
                </div>
 
                <div className="form-group col-md-4">

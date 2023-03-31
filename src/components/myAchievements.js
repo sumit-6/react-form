@@ -32,7 +32,7 @@ function MyAchievements() {
               <div className="row mb-3">
                  <div className="form-group col-md-4">
                  <label >Achievement: </label>
-                  <input type="text"  name="myAchievements" className="form-control"  placeholder="Enter Achievement" onChange={ e=>handleinputchange(e,i)} />
+                  <textarea type="text"  name="myAchievements" className="form-control"  placeholder="Enter Achievement" onChange={ e=>handleinputchange(e,i)} rows="4" cols="40" />
                </div>
                
                <div className="form-group col-md-2 mt-4">
