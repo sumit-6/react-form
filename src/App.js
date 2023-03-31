@@ -1,22 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import MainDesignation from './components/mainDesignation';
+import FirstLayer from './components/FirstLayer';
+import MyEducation from './components/myEducation';
+import MyExperience from './components/myExperience';
+import MyProjects from './components/myProjects';
+import MySkills from './components/mySkills';
+import MyAchievements from './components/myAchievements';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <form action="http://localhost:8000/portfolio/insert" method="POST">
+          <FirstLayer />
+          <br></br>
+          <MainDesignation />
+          <br></br>
+          <h2>Education</h2>
+          <MyEducation />
+          <br></br>
+          <h2>Experience</h2>
+          <MyExperience />
+          <br></br>
+          <h2>Projects</h2>
+          <MyProjects />
+          <br></br>
+          <h2>Skills</h2>
+          <MySkills />
+          <br></br>
+          <h2>Achievements</h2>
+          <MyAchievements />
+          <button>Submit</button>
+        </form>
       </header>
     </div>
   );
