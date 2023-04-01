@@ -23,13 +23,14 @@ function ProgrammingSkills() {
   }
   return (
     <Container className="content">
-     <div className="row">
+     <div className="row m-3">
        <div className="col-sm-12">
-           
+           <h2>Skills</h2>
             { 
             inputList.map( (x,i)=>{
               return(
-              <div className="row mb-3">
+              <div className="form-group row">
+                
                  <div className="form-group col-md-4">
                  <label >Skill Name: </label>
                   <input type="text"  name="skillName" className="form-control"  placeholder="Enter Skill Name" onChange={ e=>handleinputchange(e,i)} />

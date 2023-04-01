@@ -23,9 +23,9 @@ function ToolsAndFrameworks() {
   }
   return (
     <Container className="content">
-     <div className="row">
-       <div className="col-sm-12">
-           
+     <div className="row m-3">
+       <div className="col-sm-12 box pt-3">
+       <h2>Tools And Frameworks</h2>
             { 
             inputList.map( (x,i)=>{
               return(

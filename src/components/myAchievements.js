@@ -23,13 +23,14 @@ function MyAchievements() {
   }
   return (
     <Container className="content">
-     <div className="row">
-       <div className="col-sm-12">
-           
+      
+     <div className="row card m-3">
+       <div className="col-sm-12 box pt-3">
+           <h2>Achievements</h2>
             { 
             inputList.map( (x,i)=>{
               return(
-              <div className="row mb-3">
+              <div className="row">
                  <div className="form-group col-md-4">
                  <label >Achievement: </label>
                   <textarea type="text"  name="myAchievements" className="form-control"  placeholder="Enter Achievement" onChange={ e=>handleinputchange(e,i)} rows="4" cols="40" />

@@ -23,13 +23,13 @@ function MainDesignation() {
   }
   return (
     <Container className="content">
-     <div className="row">
-       <div className="col-sm-12">
+     <div className="row card m-3 box">
+       <div className="col-sm-12 box">
            
             { 
             inputList.map( (x,i)=>{
               return(
-              <div className="row mb-3">
+              <div className="row">
                  <div className="form-group col-md-4">
                  <label >Designation: </label>
                   <input type="text"  name="mainDesignations" className="form-control"  placeholder="Enter First Name" onChange={ e=>handleinputchange(e,i)} />

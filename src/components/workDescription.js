@@ -23,13 +23,14 @@ function WorkDescription(props) {
   }
   return (
     <Container className="content">
-     <div className="row">
-       <div className="col-sm-12">
+     <div className="row card m-3">
+       <div className="col-sm-12 box">
            
             { 
             inputList.map( (x,i)=>{
               return(
-              <div className="row mb-3">
+              <div className="row">
+                
                  <div className="form-group col-md-4">
                  <label >Enter Description: </label>
                   <textarea type="text"  name={"workDescription"+"_"+props.index} className="form-control"  placeholder="Enter Description" onChange={ e=>handleinputchange(e,i)} rows="4" cols="40" />

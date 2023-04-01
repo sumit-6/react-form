@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { Container } from "react-bootstrap";
+import MainDesignation from "./mainDesignation";
 
 function FirstLayer() {
     const [inputObj, setinputObj]= useState({name:'', description:''});
@@ -12,9 +13,9 @@ function FirstLayer() {
     }
   return (
     <Container className="content">
-     <div className="row">
+     <div className="row card m-3 box">
        <div className="col-sm-12">
-              <div className="row mb-3">
+              <div className="row">
                  <div className="form-group col-md-4">
                  <label >Name: </label>
                   <input type="text"  name="name" className="form-control"  placeholder="Enter Name" onChange={(e)=> handleinputchange(e)}/>
@@ -50,6 +51,7 @@ function FirstLayer() {
                 <input type="text" name="email" className="form-control" placeholder="Enter email" onChange={(e)=> handleinputchange(e)}/>
                </div>
 
+               <MainDesignation />
                </div>
             </div>
 

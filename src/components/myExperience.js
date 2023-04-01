@@ -25,14 +25,15 @@ function MyExperience() {
   }
   return (
     <Container className="content">
-     <div className="row">
-       <div className="col-sm-12">
+     <div className="row card m-3">
+       <div className="col-sm-12 box">
     
            
             { 
             inputList.map( (x,i)=>{
               return(
-              <div className="row mb-3">
+              <div className="row pt-3">
+                <h2>Experience</h2>
                  <div className="form-group col-md-4">
                  <label >Role: </label>
                   <input type="text"  name="role" className="form-control"  placeholder="Enter Role" onChange={ e=>handleinputchange(e,i)} />

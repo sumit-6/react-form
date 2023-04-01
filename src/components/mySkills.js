@@ -7,10 +7,11 @@ function MySkills() {
     
   return (
     <Container className="content">
-     <div className="row">
-       <div className="col-sm-12">
-              <div className="row mb-3">
+     <div className="row card m-3">
+       <div className="col-sm-12 box">
+              <div className="row">
                  <ProgrammingSkills />
+                 <br></br>
                  <ToolsAndFrameworks />
 
                </div>

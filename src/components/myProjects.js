@@ -24,14 +24,15 @@ function MyProjects() {
   }
   return (
     <Container className="content">
-     <div className="row">
-       <div className="col-sm-12">
-    
+     <div className="row card m-3">
+       <div className="col-sm-12 box pt-3">
+       <h2>Projects</h2>
            
             { 
             inputList.map( (x,i)=>{
               return(
-              <div className="row mb-3">
+              <div className="row">
+                
                  <div className="form-group col-md-4">
                  <label >Project Name: </label>
                   <input type="text"  name="projectName" className="form-control"  placeholder="Enter Project Name" onChange={ e=>handleinputchange(e,i)} />

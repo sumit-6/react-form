@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #e0ffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -39,4 +39,11 @@
 
 .form-group{
   padding: 1rem;
+}
+
+
+
+.row, .box{
+  background-color: #282c34;
+  border-radius: 0.35rem;
 }

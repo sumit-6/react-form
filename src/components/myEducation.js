@@ -23,15 +23,17 @@ function MyEducation() {
   }
   return (
     <Container className="content">
-     <div className="row">
-       <div className="col-sm-12">
-    
+      
+     <div className="row card m-3">
+     
+       <div className="col-sm-12 box pt-3">
+         <h2>Education</h2>
            
             { 
             inputList.map( (x,i)=>{
               return(
-              <div className="row mb-3">
-                 <div className="form-group col-md-4">
+              <div className="row">
+                <div className="form-group col-md-4">
                  <label >Institution Name: </label>
                   <input type="text"  name="institutionName" className="form-control"  placeholder="Enter Institution" onChange={ e=>handleinputchange(e,i)} />
                </div>
@@ -51,7 +53,7 @@ function MyEducation() {
                
                  <div className="form-group col-md-4">
                  <label >Aggregate: </label>
-                  <input type="number"  name="aggregate" className="form-control"  placeholder="Enter aggregate" onChange={ e=>handleinputchange(e,i)} />
+                  <input type="number" step="0.01"  name="aggregate" className="form-control"  placeholder="Enter aggregate" onChange={ e=>handleinputchange(e,i)} />
                </div>
 
                
