@@ -46,14 +46,14 @@ function MyExperience() {
   return (
     <Container className="content m-3">
      <div className="row card shadow-lg bg-body rounded">
-       <div className="col-sm-12 box">
-    
+       <div className="col-sm-12 box pt-3">
+       <h2>Experience</h2>
            
             { 
             inputList.map( (x,i)=>{
               return(
-              <div className="row pt-3">
-                <h2>Experience</h2>
+              <div className="row">
+                
                  <div className="form-group col-md-4">
                  <label >Role: </label>
                   <input type="text"  name="role" className="form-control"  placeholder="Enter Role" onChange={ e=>handleinputchange(e,i)} value={inputList[i].role} />
