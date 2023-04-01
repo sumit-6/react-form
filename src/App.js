@@ -23,8 +23,6 @@ function App() {
           <br></br>
           <MySkills />
           <br></br>
-          <hr></hr>
-          <h2>Achievements</h2>
           <MyAchievements />
           <button type="button" class="btn btn-warning btn-lg m-3">Submit</button>
           
