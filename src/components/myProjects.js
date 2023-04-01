@@ -3,15 +3,26 @@ import { Container } from "react-bootstrap";
 import ProjectDescription from "./projectDiscription";
 
 function MyProjects() {
-  const [inputList, setinputList]= useState([{projectName: "", githubLink: "", projectLink: ""}]);
+  const [inputList, setinputList]= useState([{projectName: "", githubLink: "", projectLink: "", description: [""]}]);
 
   const handleinputchange=(e, index)=>{
     const {name, value}= e.target;
     const list= [...inputList];
     list[index][name]= value;
     setinputList(list);
-    
   }
+
+  const handleProjectDescriptionChange = (value, index) => {
+    const list = [...inputList];
+    list[index].description = value;
+    setinputList(list);
+  };
+
+  const handleProjectDescriptionDelete = (value, index, ind) => {
+    const list = [...inputList];
+    list[ind]['description'].splice(index, 1);
+    setinputList(list);
+  };
  
   const handleremove= (event, index)=>{
     event.preventDefault();
@@ -21,7 +32,7 @@ function MyProjects() {
   }
 
   const handleaddclick=()=>{ 
-    setinputList([...inputList, {projectName: "", githubLink: "", projectLink: ""}]);
+    setinputList([...inputList, {projectName: "", githubLink: "", projectLink: "", description: [""]}]);
   }
   return (
     <Container className="content m-3">
@@ -36,20 +47,20 @@ function MyProjects() {
                 
                  <div className="form-group col-md-4">
                  <label >Project Name: </label>
-                  <input type="text"  name="projectName" className="form-control"  placeholder="Enter Project Name" onChange={ e=>handleinputchange(e,i)} />
+                  <input type="text"  name="projectName" className="form-control"  placeholder="Enter Project Name" onChange={ e=>handleinputchange(e,i)} value={x.projectName} />
                </div>
                
                
                  <div className="form-group col-md-4">
                  <label >Github Link: </label>
-                  <input type="text"  name="githubLink" className="form-control"  placeholder="Enter github link" onChange={ e=>handleinputchange(e,i)} />
+                  <input type="text"  name="githubLink" className="form-control"  placeholder="Enter github link" onChange={ e=>handleinputchange(e,i)} value={x.githubLink} />
                </div>
 
-               <ProjectDescription index={i} />
+               <ProjectDescription index={i} description={x.description} onChange={handleProjectDescriptionChange} onRemove={handleProjectDescriptionDelete} />
                 
                  <div className="form-group col-md-4">
                  <label >Project Link: </label>
-                  <input type="text"  name="projectLink" className="form-control"  placeholder="Enter project url" onChange={ e=>handleinputchange(e,i)} />
+                  <input type="text"  name="projectLink" className="form-control"  placeholder="Enter project url" onChange={ e=>handleinputchange(e,i)} value={x.projectLink} />
                </div>
 
                <div className="form-group col-md-2 mt-4">

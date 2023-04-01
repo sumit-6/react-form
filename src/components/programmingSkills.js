@@ -34,12 +34,12 @@ function ProgrammingSkills() {
                 
                  <div className="form-group col-md-4">
                  <label >Skill Name: </label>
-                  <input type="text"  name="skillName" className="form-control"  placeholder="Enter Skill Name" onChange={ e=>handleinputchange(e,i)} />
+                  <input type="text"  name="skillName" className="form-control"  placeholder="Enter Skill Name" onChange={ e=>handleinputchange(e,i)} value={x.skillName} />
                </div>
 
                <div className="form-group col-md-4">
                  <label >Level: </label>
-                  <input type="number"  name="skillLevel" className="form-control"  placeholder="Enter Skill Level" onChange={ e=>handleinputchange(e,i)} />
+                  <input type="number"  name="skillLevel" className="form-control"  placeholder="Enter Skill Level" onChange={ e=>handleinputchange(e,i)} value={x.skillLevel} />
                </div>
                
                <div className="form-group col-md-2 mt-4">

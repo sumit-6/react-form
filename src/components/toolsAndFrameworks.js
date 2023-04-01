@@ -33,12 +33,12 @@ function ToolsAndFrameworks() {
               <div className="row mb-3">
                  <div className="form-group col-md-4">
                  <label >Tool Name: </label>
-                  <input type="text"  name="toolName" className="form-control"  placeholder="Enter Tool Name" onChange={ e=>handleinputchange(e,i)} />
+                  <input type="text"  name="toolName" className="form-control"  placeholder="Enter Tool Name" onChange={ e=>handleinputchange(e,i)} value={x.toolName} />
                </div>
 
                <div className="form-group col-md-4">
                  <label >Level: </label>
-                  <input type="number"  name="toolLevel" className="form-control"  placeholder="Enter Tool Level" onChange={ e=>handleinputchange(e,i)} />
+                  <input type="number"  name="toolLevel" className="form-control"  placeholder="Enter Tool Level" onChange={ e=>handleinputchange(e,i)} value={x.toolLevel} />
                </div>
                
                <div className="form-group col-md-2 mt-4">

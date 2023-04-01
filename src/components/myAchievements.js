@@ -34,7 +34,7 @@ function MyAchievements() {
               <div className="row">
                  <div className="form-group col-md-4">
                  <label >Achievement: </label>
-                  <textarea type="text"  name="myAchievements" className="form-control"  placeholder="Enter Achievement" onChange={ e=>handleinputchange(e,i)} rows="4" cols="40" />
+                  <textarea type="text"  name="myAchievements" className="form-control"  placeholder="Enter Achievement" onChange={ e=>handleinputchange(e,i)} rows="4" cols="40" value={x} />
                </div>
                
                <div className="form-group col-md-2 mt-4">

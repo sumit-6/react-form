@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
+import { useEffect } from "react";
 
 function ProjectDescription(props) {
   const [inputList, setinputList]= useState([""]);
-
+  useEffect(() => {
+    const list = props.description || [""]; // initialize the inputList with the workDescriptionList from props or with an empty string
+    setinputList(list);
+  }, [props.description]);
   const handleinputchange=(e, index)=>{
     const {name, value}= e.target;
     const list= [...inputList];
     list[index]= value;
     setinputList(list);
-
+    props.onChange(list, props.index);
   }
  
   const handleremove= (event, index)=>{
@@ -17,6 +21,7 @@ function ProjectDescription(props) {
     const list=[...inputList];
     list.splice(index,1);
     setinputList(list);
+    props.onRemove(list, index, props.index)
   }
 
   const handleaddclick=()=>{ 
@@ -30,10 +35,10 @@ function ProjectDescription(props) {
             { 
             inputList.map( (x,i)=>{
               return(
-              <div className="row">
+              <div className="row" key={`projectDescription-${props.index}-${i}`}>
                  <div className="form-group col-md-4">
                  <label >Enter Description: </label>
-                  <textarea type="text"  name={"projectDescription"+"_"+props.index} className="form-control"  placeholder="Enter Description" onChange={ e=>handleinputchange(e,i)} rows="4" cols="40" />
+                  <textarea type="text"  name={"projectDescription"+"_"+props.index} className="form-control"  placeholder="Enter Description" onChange={ e=>handleinputchange(e,i)} rows="4" cols="40" value={x} />
                </div>
                
                <div className="form-group col-md-2 mt-4">
