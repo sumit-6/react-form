@@ -12,12 +12,10 @@ function MyEducation() {
 
   }
  
-  const handleremove= (index)=>{
+  const handleremove= (event, index)=>{
+    event.preventDefault();
     const list=[...inputList];
-    const n = list.length;
-    const left = list.slice(0, index);
-    const right = list.slice(index + 1, n);
-
+    list.splice(index,1);
     setinputList(list);
   }
 
@@ -38,37 +36,37 @@ function MyEducation() {
               <div className="row">
                 <div className="form-group col-md-4">
                  <label >Institution Name: </label>
-                  <input type="text"  name="institutionName" className="form-control"  placeholder="Enter Institution" onChange={ e=>handleinputchange(e,i)} />
+                  <input type="text"  name="institutionName" className="form-control"  placeholder="Enter Institution" onChange={ e=>handleinputchange(e,i)} value={inputList[i].institutionName} />
                </div>
                
                
                  <div className="form-group col-md-4">
                  <label >Year: </label>
-                  <input type="number"  name="year" className="form-control"  placeholder="Enter end year" onChange={ e=>handleinputchange(e,i)} />
+                  <input type="number"  name="year" className="form-control"  placeholder="Enter end year" onChange={ e=>handleinputchange(e,i)} value={inputList[i].year} />
                </div>
 
        
                  <div className="form-group col-md-4">
                  <label >Place: </label>
-                  <input type="text"  name="place" className="form-control"  placeholder="Enter place" onChange={ e=>handleinputchange(e,i)} />
+                  <input type="text"  name="place" className="form-control"  placeholder="Enter place" onChange={ e=>handleinputchange(e,i)} value={inputList[i].place} />
                </div>
 
                
                  <div className="form-group col-md-4">
                  <label >Aggregate: </label>
-                  <input type="number" step="0.01"  name="aggregate" className="form-control"  placeholder="Enter aggregate" onChange={ e=>handleinputchange(e,i)} />
+                  <input type="number" step="0.01"  name="aggregate" className="form-control"  placeholder="Enter aggregate" onChange={ e=>handleinputchange(e,i)} value={inputList[i].aggregate} />
                </div>
 
                
                  <div className="form-group col-md-4">
                  <label >Course Pursuied: </label>
-                  <input type="text"  name="coursePursuied" className="form-control"  placeholder="Enter courage pursuied" onChange={ e=>handleinputchange(e,i)} />
+                  <input type="text"  name="coursePursuied" className="form-control"  placeholder="Enter courage pursuied" onChange={ e=>handleinputchange(e,i)} value={inputList[i].coursePursuied} />
                </div>
 
                <div className="form-group col-md-2 mt-4">
                {
                   inputList.length!==1 &&
-                  <button  className="btn btn-danger mx-1" onClick={()=> handleremove(i)}>Remove</button>
+                  <button  className="btn btn-danger mx-1" onClick={(e)=> handleremove(e, i)}>Remove</button>
                }
                { inputList.length-1===i &&
                <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More</button>

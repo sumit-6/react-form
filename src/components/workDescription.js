@@ -1,21 +1,30 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
+import { useEffect } from "react";
 
 function WorkDescription(props) {
   const [inputList, setinputList]= useState([""]);
+
+  useEffect(() => {
+    const list = props.workDescription || [""]; // initialize the inputList with the workDescriptionList from props or with an empty string
+    setinputList(list);
+  }, [props.workDescription]);
 
   const handleinputchange=(e, index)=>{
     const {name, value}= e.target;
     const list= [...inputList];
     list[index]= value;
     setinputList(list);
-
+    props.onChange(list, props.index);
   }
  
-  const handleremove= index=>{
-    const list=[...inputList];
-    list.splice(index,1);
+  const handleremove= (event, index)=>{
+    event.preventDefault();
+    const list=inputList.filter((value, ind) => {
+      return index !== ind;
+    });
     setinputList(list);
+    props.onRemove(list, index, props.index);
   }
 
   const handleaddclick=()=>{ 
@@ -29,17 +38,19 @@ function WorkDescription(props) {
             { 
             inputList.map( (x,i)=>{
               return(
-              <div className="row">
+              <div className="row" key={`workDescription-${props.index}-${i}`}>
                 
                  <div className="form-group col-md-4">
                  <label >Enter Description: </label>
-                  <textarea type="text"  name={"workDescription"+"_"+props.index} className="form-control"  placeholder="Enter Description" onChange={ e=>handleinputchange(e,i)} rows="4" cols="40" />
+                  <textarea type="text" name={"workDescription"+"_"+props.index} className="form-control"  placeholder="Enter Description" onChange={ e=>handleinputchange(e,i)} rows="4" cols="40" value={x}></textarea>
                </div>
                
                <div className="form-group col-md-2 mt-4">
                {
                   inputList.length!==1 &&
-                  <button  className="btn btn-danger mx-1" onClick={()=> handleremove(i)}>Remove</button>
+                  <button  className="btn btn-danger mx-1" onClick={(e)=> {
+                    handleremove(e, i);
+                  }}>Remove</button>
                }
                { inputList.length-1===i &&
                <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More</button>

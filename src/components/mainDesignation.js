@@ -12,8 +12,9 @@ function MainDesignation() {
 
   }
  
-  const handleremove= index=>{
-    const list=[...inputList];
+  const handleremove= (event, index)=>{
+    event.preventDefault();
+    let list=[...inputList];
     list.splice(index,1);
     setinputList(list);
   }
@@ -32,13 +33,13 @@ function MainDesignation() {
               <div className="row">
                  <div className="form-group col-md-4">
                  <label >Designation: </label>
-                  <input type="text"  name="mainDesignations" className="form-control"  placeholder="Enter First Name" onChange={ e=>handleinputchange(e,i)} />
+                  <input type="text"  name="mainDesignations" className="form-control"  placeholder="Enter First Name" onChange={ e=>handleinputchange(e,i)} value={inputList[i]} />
                </div>
                
                <div className="form-group col-md-2 mt-4">
                {
                   inputList.length!==1 &&
-                  <button className="btn btn-danger mx-1" onClick={()=> handleremove(i)}>Remove</button>
+                  <button className="btn btn-danger mx-1" onClick={(e)=> handleremove(e, i)}>Remove</button>
                }
                { inputList.length-1===i &&
                <button className="btn btn-success m-1" onClick={ handleaddclick}>Add More</button>

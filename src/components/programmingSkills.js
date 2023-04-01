@@ -12,7 +12,8 @@ function ProgrammingSkills() {
 
   }
  
-  const handleremove= index=>{
+  const handleremove= (event, index)=>{
+    event.preventDefault();
     const list=[...inputList];
     list.splice(index,1);
     setinputList(list);
@@ -44,7 +45,7 @@ function ProgrammingSkills() {
                <div className="form-group col-md-2 mt-4">
                {
                   inputList.length!==1 &&
-                  <button  className="btn btn-danger mx-1" onClick={()=> handleremove(i)}>Remove</button>
+                  <button  className="btn btn-danger mx-1" onClick={(e)=> handleremove(e, i)}>Remove</button>
                }
                { inputList.length-1===i &&
                <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More</button>
