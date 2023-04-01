@@ -23,8 +23,8 @@ function MyProjects() {
     setinputList([...inputList, {projectName: "", githubLink: "", projectLink: ""}]);
   }
   return (
-    <Container className="content">
-     <div className="row card m-3">
+    <Container className="content m-3">
+     <div className="row card shadow-lg bg-body rounded">
        <div className="col-sm-12 box pt-3">
        <h2>Projects</h2>
            
@@ -57,7 +57,7 @@ function MyProjects() {
                   <button  className="btn btn-danger mx-1" onClick={()=> handleremove(i)}>Remove</button>
                }
                { inputList.length-1===i &&
-               <button  className="btn btn-success" onClick={ handleaddclick}>Add More</button>
+               <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More</button>
                }
                </div>
             </div>

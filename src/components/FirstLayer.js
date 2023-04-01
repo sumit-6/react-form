@@ -12,8 +12,8 @@ function FirstLayer() {
       setinputObj(obj);
     }
   return (
-    <Container className="content">
-     <div className="row card m-3 box">
+    <Container className="content m-3">
+     <div className="row card box shadow-lg bg-body rounded">
        <div className="col-sm-12">
               <div className="row">
                  <div className="form-group col-md-4">

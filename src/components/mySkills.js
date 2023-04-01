@@ -6,8 +6,8 @@ import ToolsAndFrameworks from "./toolsAndFrameworks";
 function MySkills() {
     
   return (
-    <Container className="content">
-     <div className="row card m-3">
+    <Container className="content m-3">
+     <div className="row card shadow-lg bg-body rounded">
        <div className="col-sm-12 box">
               <div className="row">
                  <ProgrammingSkills />

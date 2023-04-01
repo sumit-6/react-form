@@ -24,8 +24,8 @@ function MyExperience() {
     setinputList([...inputList, {role: "", company: "", certificate: ""}]);
   }
   return (
-    <Container className="content">
-     <div className="row card m-3">
+    <Container className="content m-3">
+     <div className="row card shadow-lg bg-body rounded">
        <div className="col-sm-12 box">
     
            
@@ -60,7 +60,7 @@ function MyExperience() {
                   <button  className="btn btn-danger mx-1" onClick={()=> handleremove(i)}>Remove</button>
                }
                { inputList.length-1===i &&
-               <button  className="btn btn-success" onClick={ handleaddclick}>Add More</button>
+               <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More</button>
                }
                </div>
             </div>
