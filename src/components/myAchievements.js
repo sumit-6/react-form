@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 
-function MyAchievements() {
-  const [inputList, setinputList]= useState([""]);
+function MyAchievements(props) {
+  const [inputList, setinputList]= useState(props.data);
 
   const handleinputchange=(e, index)=>{
     const {name, value}= e.target;

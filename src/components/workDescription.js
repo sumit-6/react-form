@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import { useEffect } from "react";
 
 function WorkDescription(props) {
-  const [inputList, setinputList]= useState([""]);
+  const [inputList, setinputList]= useState(props.data);
 
   useEffect(() => {
     const list = props.workDescription || [""]; // initialize the inputList with the workDescriptionList from props or with an empty string

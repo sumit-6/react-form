@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import { useEffect } from "react";
 
 function Duration(props) {
-    const [inputObj, setinputObj]= useState({start:'', end:''});
+    const [inputObj, setinputObj]= useState(props.data);
 
     useEffect(() => {
       const list = props.duration || {start: "", end: ""}; // initialize the inputList with the workDescriptionList from props or with an empty string

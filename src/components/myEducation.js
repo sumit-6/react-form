@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 
-function MyEducation() {
-  const [inputList, setinputList]= useState([{institutionName: "", place: "", year: "", aggregate: "", coursePursuied: ""}]);
+function MyEducation(props) {
+  const [inputList, setinputList]= useState(props.data);
 
   const handleinputchange=(e, index)=>{
     const {name, value}= e.target;
@@ -36,31 +36,31 @@ function MyEducation() {
               <div className="row">
                 <div className="form-group col-md-4">
                  <label >Institution Name: </label>
-                  <input type="text"  name="institutionName" className="form-control"  placeholder="Enter Institution" onChange={ e=>handleinputchange(e,i)} value={inputList[i].institutionName} />
+                  <input type="text"  name="institutionName" className="form-control"  placeholder="Enter Institution" onChange={ e=>handleinputchange(e,i)} value={x.institutionName} />
                </div>
                
                
                  <div className="form-group col-md-4">
                  <label >Year: </label>
-                  <input type="number"  name="year" className="form-control"  placeholder="Enter end year" onChange={ e=>handleinputchange(e,i)} value={inputList[i].year} />
+                  <input type="number"  name="year" className="form-control"  placeholder="Enter end year" onChange={ e=>handleinputchange(e,i)} value={x.year} />
                </div>
 
        
                  <div className="form-group col-md-4">
                  <label >Place: </label>
-                  <input type="text"  name="place" className="form-control"  placeholder="Enter place" onChange={ e=>handleinputchange(e,i)} value={inputList[i].place} />
+                  <input type="text"  name="place" className="form-control"  placeholder="Enter place" onChange={ e=>handleinputchange(e,i)} value={x.place} />
                </div>
 
                
                  <div className="form-group col-md-4">
                  <label >Aggregate: </label>
-                  <input type="number" step="0.01"  name="aggregate" className="form-control"  placeholder="Enter aggregate" onChange={ e=>handleinputchange(e,i)} value={inputList[i].aggregate} />
+                  <input type="number" step="0.01"  name="aggregate" className="form-control"  placeholder="Enter aggregate" onChange={ e=>handleinputchange(e,i)} value={x.aggregate} />
                </div>
 
                
                  <div className="form-group col-md-4">
                  <label >Course Pursuied: </label>
-                  <input type="text"  name="coursePursuied" className="form-control"  placeholder="Enter courage pursuied" onChange={ e=>handleinputchange(e,i)} value={inputList[i].coursePursuied} />
+                  <input type="text"  name="coursePursuied" className="form-control"  placeholder="Enter courage pursuied" onChange={ e=>handleinputchange(e,i)} value={x.coursePursuied} />
                </div>
 
                <div className="form-group col-md-2 mt-4">

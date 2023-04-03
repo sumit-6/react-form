@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 
-function MainDesignation() {
-  const [inputList, setinputList]= useState([""]);
+function MainDesignation(props) {
+  const [inputList, setinputList]= useState(props.mainDesignations);
 
   const handleinputchange=(e, index)=>{
     const {name, value}= e.target;

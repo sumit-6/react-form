@@ -3,8 +3,8 @@ import { Container } from "react-bootstrap";
 import Duration from "./duration";
 import WorkDescription from "./workDescription";
 
-function MyExperience() {
-  const [inputList, setinputList]= useState([{role: "", company: "", certificate: "", workDescription: [""], duration: {start: "", end: ""}}]);
+function MyExperience(props) {
+  const [inputList, setinputList]= useState(props.data);
 
   const handleinputchange=(e, index)=>{
     const {name, value}= e.target;
@@ -66,7 +66,7 @@ function MyExperience() {
                </div>
 
                <WorkDescription index={i} workDescription={x.workDescription}
-                onChange={handleWorkDescriptionChange} onRemove={handleWorkDescriptionDelete}/>
+                onChange={handleWorkDescriptionChange} onRemove={handleWorkDescriptionDelete} data={x.workDescription}/>
                 
                  <div className="form-group col-md-4">
                  <label >Certificate Url: </label>
@@ -74,7 +74,7 @@ function MyExperience() {
                </div>
 
                
-                <Duration index={i} duration={x.duration} onChange={handleDurationChange} />
+                <Duration index={i} duration={x.duration} onChange={handleDurationChange} data={x.duration}/>
                <div className="form-group col-md-2 mt-4">
                {
                   inputList.length!==1 &&

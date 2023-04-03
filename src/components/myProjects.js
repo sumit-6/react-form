@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import ProjectDescription from "./projectDiscription";
 
-function MyProjects() {
-  const [inputList, setinputList]= useState([{projectName: "", githubLink: "", projectLink: "", description: [""]}]);
+function MyProjects(props) {
+  const [inputList, setinputList]= useState(props.data);
 
   const handleinputchange=(e, index)=>{
     const {name, value}= e.target;
@@ -56,7 +56,7 @@ function MyProjects() {
                   <input type="text"  name="githubLink" className="form-control"  placeholder="Enter github link" onChange={ e=>handleinputchange(e,i)} value={x.githubLink} />
                </div>
 
-               <ProjectDescription index={i} description={x.description} onChange={handleProjectDescriptionChange} onRemove={handleProjectDescriptionDelete} />
+               <ProjectDescription index={i} description={x.description} onChange={handleProjectDescriptionChange} onRemove={handleProjectDescriptionDelete} data={x.description} />
                 
                  <div className="form-group col-md-4">
                  <label >Project Link: </label>
