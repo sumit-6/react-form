@@ -14,11 +14,11 @@ function EditReactForm(props) {
   const [data, setData] = useState({});
   useEffect(() => {(async () => {
         //console.log('hello');
-        const response = await axios.get(`http://localhost:8000/api/portfolio/${props.id}`);
-        const dataRes = response.data;
-        setData(dataRes);
-        console.log(dataRes);
-        setIsReady(true);
+            const response = await axios.get(`http://localhost:8000/api/portfolio/${props.id}`);
+            const dataRes = response.data;
+            setData(dataRes);
+            
+            setIsReady(true);
         })();
     }, []);
    
