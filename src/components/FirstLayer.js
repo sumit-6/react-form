@@ -4,7 +4,11 @@ import MainDesignation from "./mainDesignation";
 
 function FirstLayer(props) {
     const [inputObj, setinputObj]= useState({name:props.name, description:props.description, profilePicture: props.profilePicture, linkedIn: props.linkedIn, instagram: props.instagram, telephone: props.telephone, email: props.email});
-
+    const [profilePic, setProfilePic] = useState(inputObj.profilePicture.url);
+    const handleremove=(e)=>{
+      e.preventDefault();
+      setProfilePic(null);
+    }
     const handleinputchange=(e)=>{
       const {name, value} = e.target;
       const obj = {...inputObj};
@@ -26,10 +30,16 @@ function FirstLayer(props) {
                 <textarea type="text" name="description" className="form-control" placeholder="Enter Description" onChange={(e)=> handleinputchange(e)} rows="4" cols="40" value={inputObj.description}  />
                </div>
 
-               <div className="form-group col-md-4">
+               {(profilePic == null) && <div className="form-group col-md-4">
                 <label>Profile Picture: </label>
-                <input type="file" name="profilePicture" className="form-control" placeholder="Enter profile picture" onChange={(e)=> handleinputchange(e)} value={inputObj.profilePicture}/>
-               </div>
+                <input type="file" name="profilePicture" className="form-control" placeholder="Enter profile picture" onChange={(e)=> handleinputchange(e)}/>
+               </div>}
+
+               {(profilePic) && <div className="form-group col-md-4">
+                <label>Profile Picture</label>
+                <img src={inputObj.profilePicture.url}/>
+                <button  className="btn btn-danger mx-1" onClick={(e)=> handleremove(e)}>Remove</button>
+               </div> }
                
                <div className="form-group col-md-4">
                 <label>LinkedIn: </label>
@@ -55,8 +65,7 @@ function FirstLayer(props) {
                </div>
             </div>
 
-               
-       </div>
+          </div> 
     </Container>
   );
 }
