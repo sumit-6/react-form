@@ -12,10 +12,9 @@ function ReactForm() {
     <div className="App">
       <header className="App-header">
         <form action="http://localhost:8000/portfolio/insert" method="POST" encType='multipart/form-data'>
-          <FirstLayer name='' telephone='' description='' instagram='' linkedIn='' email='' profilePicture='' mainDesignations={['']} />
+          <FirstLayer name='' telephone='' description='' instagram='' linkedIn='' email='' profilePicture={{url: null, filename: null}} mainDesignations={['']} />
           <br></br>
-          
-          <MyEducation data={[{institutionName: "", profilePicture: {url: null, filename: null}, place: "", year: "", aggregate: "", coursePursuied: ""}]}/>
+          <MyEducation data={[{institutionName: "", place: "", year: "", aggregate: "", coursePursuied: ""}]}/>
           <br></br>
           <MyExperience data={[{role: "", company: "", certificate: "", workDescription: [""], duration: {start: "", end: ""}}]}/>
           <br></br>
