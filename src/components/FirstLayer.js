@@ -1,19 +1,24 @@
 import React, {useState} from "react";
 import { Container } from "react-bootstrap";
 import MainDesignation from "./mainDesignation";
+import { useLocation } from "react-router-dom";
 
 function FirstLayer(props) {
+    const location = useLocation().pathname + "/profilePicture";
+    
     const [inputObj, setinputObj]= useState({name:props.name, description:props.description, profilePicture: props.profilePicture, linkedIn: props.linkedIn, instagram: props.instagram, telephone: props.telephone, email: props.email});
     const [profilePic, setProfilePic] = useState(inputObj.profilePicture.url);
-    const handleremove=(e)=>{
-      e.preventDefault();
-      setProfilePic(null);
-    }
+   
     const handleinputchange=(e)=>{
       const {name, value} = e.target;
       const obj = {...inputObj};
       obj[name] = value;
       setinputObj(obj);
+    }
+    const handleFileChange = (e) => {
+      const file = e.target.files[0];
+      console.log(file);
+      setinputObj({...inputObj, profilePicture: file})
     }
   return (
     <Container className="content m-3">
@@ -32,13 +37,13 @@ function FirstLayer(props) {
 
                {(profilePic == null) && <div className="form-group col-md-4">
                 <label>Profile Picture: </label>
-                <input type="file" name="profilePicture" className="form-control" placeholder="Enter profile picture" onChange={(e)=> handleinputchange(e)} value={inputObj.profilePicture}/>
+                <input type="file" name="profilePicture" className="form-control" placeholder="Enter profile picture" onChange={(e) => handleFileChange(e)}  />
                </div>}
 
                {(profilePic) && <div className="form-group col-md-4">
-                <label>Profile Picture</label>
-                <img src={inputObj.profilePicture.url}/>
-                <button  className="btn btn-danger mx-1" onClick={(e)=> handleremove(e)}>Remove</button>
+                <label>Profile Picture: </label>
+                <div>
+                <a href={`${location}`}>Edit Profile Picture</a></div>
                </div> }
                
                <div className="form-group col-md-4">
