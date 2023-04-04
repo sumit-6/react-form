@@ -32,7 +32,7 @@ function FirstLayer(props) {
 
                {(profilePic == null) && <div className="form-group col-md-4">
                 <label>Profile Picture: </label>
-                <input type="file" name="profilePicture" className="form-control" placeholder="Enter profile picture" onChange={(e)=> handleinputchange(e)}/>
+                <input type="file" name="profilePicture" className="form-control" placeholder="Enter profile picture" onChange={(e)=> handleinputchange(e)} value={inputObj.profilePicture}/>
                </div>}
 
                {(profilePic) && <div className="form-group col-md-4">
