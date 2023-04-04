@@ -28,7 +28,7 @@ function FirstLayer(props) {
 
                <div className="form-group col-md-4">
                 <label>Profile Picture: </label>
-                <input type="text" name="profilePicture" className="form-control" placeholder="Enter profile picture" onChange={(e)=> handleinputchange(e)} value={inputObj.profilePicture}/>
+                <input type="file" name="profilePicture" className="form-control" placeholder="Enter profile picture" onChange={(e)=> handleinputchange(e)} value={inputObj.profilePicture}/>
                </div>
                
                <div className="form-group col-md-4">

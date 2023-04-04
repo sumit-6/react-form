@@ -11,7 +11,7 @@ function ReactForm() {
   return (
     <div className="App">
       <header className="App-header">
-        <form action="http://localhost:8000/portfolio/insert" method="POST">
+        <form action="http://localhost:8000/portfolio/insert" method="POST" encType='multipart/form-data'>
           <FirstLayer name='' telephone='' description='' instagram='' linkedIn='' email='' profilePicture='' mainDesignations={['']} />
           <br></br>
           
