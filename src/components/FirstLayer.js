@@ -8,7 +8,9 @@ function FirstLayer(props) {
     
     const [inputObj, setinputObj]= useState({name:props.name, description:props.description, profilePicture: props.profilePicture, linkedIn: props.linkedIn, instagram: props.instagram, telephone: props.telephone, email: props.email});
     const [profilePic, setProfilePic] = useState(inputObj.profilePicture.url);
-   
+    function getThumbnail(url) {
+      return url.replace('/upload', '/upload/w_200')
+  }
     const handleinputchange=(e)=>{
       const {name, value} = e.target;
       const obj = {...inputObj};
@@ -42,7 +44,7 @@ function FirstLayer(props) {
 
                {(profilePic) && <div className="form-group col-md-4">
                 <label>Profile Picture: </label>
-                <img src={profilePic} className="image-thumbnail" alt={inputObj.profilePicture.filename}></img>
+                <img src={getThumbnail(inputObj.profilePicture.url)} className="image-thumbnail" alt={inputObj.profilePicture.filename}></img>
                 <div>
                 <a href={`${location}`}>Edit Profile Picture</a></div>
                </div> }
