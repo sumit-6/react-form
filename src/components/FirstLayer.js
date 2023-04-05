@@ -42,6 +42,7 @@ function FirstLayer(props) {
 
                {(profilePic) && <div className="form-group col-md-4">
                 <label>Profile Picture: </label>
+                <img src={profilePic} className="image-thumbnail" alt={inputObj.profilePicture.filename}></img>
                 <div>
                 <a href={`${location}`}>Edit Profile Picture</a></div>
                </div> }
