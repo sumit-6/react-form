@@ -7,7 +7,6 @@ function FirstLayer(props) {
     const location = useLocation().pathname + "/profilePicture";
     
     const [inputObj, setinputObj]= useState({name:props.name, description:props.description, profilePicture: props.profilePicture, linkedIn: props.linkedIn, instagram: props.instagram, telephone: props.telephone, email: props.email});
-    const [profilePic, setProfilePic] = useState(inputObj.profilePicture.url);
     function getThumbnail(url) {
       return url.replace('/upload', '/upload/w_200')
   }
@@ -37,12 +36,12 @@ function FirstLayer(props) {
                 <textarea type="text" name="description" className="form-control" placeholder="Enter Description" onChange={(e)=> handleinputchange(e)} rows="4" cols="40" value={inputObj.description}  />
                </div>
 
-               {(profilePic == null) && <div className="form-group col-md-4">
+               {(inputObj.profilePicture.url == null) && <div className="form-group col-md-4">
                 <label>Profile Picture: </label>
                 <input type="file" name="profilePicture" className="form-control" placeholder="Enter profile picture" onChange={(e) => handleFileChange(e)}  />
                </div>}
 
-               {(profilePic) && <div className="form-group col-md-4">
+               {(inputObj.profilePicture.url) && <div className="form-group col-md-4">
                 <label>Profile Picture: </label>
                 <img src={getThumbnail(inputObj.profilePicture.url)} className="image-thumbnail" alt={inputObj.profilePicture.filename}></img>
                 <div>
