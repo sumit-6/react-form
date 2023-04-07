@@ -2,6 +2,7 @@ import ReactForm from "./components/ReactForm";
 import EditReactForm from "./components/EditReactForm";
 import ProfilePictureEditForm from "./components/ProfilePictureEditForm";
 import {Routes, Route, useLocation} from 'react-router-dom';
+import bsCustomFileInput from 'bs-custom-file-input';
 function App() {
   const location = useLocation();
   const ID = location.pathname.split('/')[2];
