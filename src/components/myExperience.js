@@ -61,8 +61,8 @@ function MyExperience(props) {
                
                
                  <div className="form-group col-md-4">
-                 <label for={`role_${i}`} className="form-label">Company: </label>
-                  <input type="text" id={`role_${i}`} name="company" className="form-control"  placeholder="Enter Company Name" onChange={ e=>handleinputchange(e,i)} value={inputList[i].company} required />
+                 <label for={`company_${i}`} className="form-label">Company: </label>
+                  <input type="text" id={`company_${i}`} name="company" className="form-control"  placeholder="Enter Company Name" onChange={ e=>handleinputchange(e,i)} value={inputList[i].company} required />
                </div>
 
                <WorkDescription index={i} workDescription={x.workDescription}
