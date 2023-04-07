@@ -22,6 +22,7 @@ function ProgrammingSkills(props) {
   const handleaddclick=()=>{ 
     setinputList([...inputList, {skillName: "", skillLevel: ""}]);
   }
+  const skillLevelOptions = ["Expert", "Intermediate", "Beginner"];
   return (
     <Container className="content">
      <div className="row m-3">
@@ -38,8 +39,13 @@ function ProgrammingSkills(props) {
                </div>
 
                <div className="form-group col-md-4">
-                 <label for={`skillLevel_${i}`} className="form-label">Level: </label>
-                  <input type="number" id={`skillLevel_${i}`} name="skillLevel" className="form-control"  placeholder="Enter Skill Level" onChange={ e=>handleinputchange(e,i)} value={x.skillLevel} required />
+               <label htmlFor={`skillLevel_${i}`} className="form-label">Level: </label>
+                  <select id={`skillLevel_${i}`} name="skillLevel" className="form-control" onChange={ e=>handleinputchange(e,i)} value={x.skillLevel} required >
+                    <option value="">Select Skill Level</option>
+                    {skillLevelOptions.map(option => (
+                      <option key={option} value={option}>{option}</option>
+                    ))}
+                  </select>
                </div>
                
                <div className="form-group col-md-2 mt-4">

@@ -70,7 +70,7 @@ function MyExperience(props) {
                 
                  <div className="form-group col-md-4">
                  <label for={`certificate_${i}`} className="form-label">Certificate Url: </label>
-                  <input type="text" id={`certificate_${i}`}  name="certificate" className="form-control"  placeholder="Enter Certficate URL" onChange={ e=>handleinputchange(e,i)} value={inputList[i].certificate} required />
+                  <input type="text" id={`certificate_${i}`}  name="certificate" className="form-control"  placeholder="Enter Certficate URL" onChange={ e=>handleinputchange(e,i)} value={inputList[i].certificate} />
                </div>
 
                

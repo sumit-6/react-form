@@ -22,6 +22,7 @@ function ToolsAndFrameworks(props) {
   const handleaddclick=()=>{ 
     setinputList([...inputList, {toolName: "", toolLevel: ""}]);
   }
+  const toolLevelOptions = ["Expert", "Intermediate", "Beginner"];
   return (
     <Container className="content">
      <div className="row m-3">
@@ -37,8 +38,13 @@ function ToolsAndFrameworks(props) {
                </div>
 
                <div className="form-group col-md-4">
-                 <label for={`toolLevel_${i}`}>Level: </label>
-                  <input type="number" id={`tooLevel_${i}`} name="toolLevel" className="form-control"  placeholder="Enter Tool Level" onChange={ e=>handleinputchange(e,i)} value={x.toolLevel} required />
+               <label htmlFor={`toolLevel_${i}`} className="form-label">Level: </label>
+                  <select id={`toolLevel_${i}`} name="toolLevel" className="form-control" onChange={ e=>handleinputchange(e,i)} value={x.skillLevel} required >
+                    <option value="">Select Skill Level</option>
+                    {toolLevelOptions.map(option => (
+                      <option key={option} value={option}>{option}</option>
+                    ))}
+                  </select>
                </div>
                
                <div className="form-group col-md-2 mt-4">

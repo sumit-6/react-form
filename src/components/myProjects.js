@@ -60,7 +60,7 @@ function MyProjects(props) {
                 
                  <div className="form-group col-md-4">
                  <label for={`projectLink_${i}`} className="form-label">Project Link: </label>
-                  <input type="text" id={`projectLink_${i}`} name="projectLink" className="form-control"  placeholder="Enter project url" onChange={ e=>handleinputchange(e,i)} value={x.projectLink} required />
+                  <input type="text" id={`projectLink_${i}`} name="projectLink" className="form-control"  placeholder="Enter project url" onChange={ e=>handleinputchange(e,i)} value={x.projectLink} />
                </div>
 
                <div className="form-group col-md-2 mt-4">
