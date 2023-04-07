@@ -32,7 +32,7 @@ function MyProjects(props) {
   }
 
   const handleaddclick=()=>{ 
-    setinputList([...inputList, {projectName: "", githubLink: "", projectLink: "", description: [""]}]);
+    setinputList([...inputList, {projectName: "", gitHubLink: "", projectLink: "", description: [""]}]);
   }
   return (
     <Container className="content m-3">
@@ -53,7 +53,7 @@ function MyProjects(props) {
                
                  <div className="form-group col-md-4">
                  <label for={`githubLink_${i}`} className="form-label">Github Link: </label>
-                  <input type="text" id={`githubLink_${i}`} name="githubLink" className="form-control"  placeholder="Enter github link" onChange={ e=>handleinputchange(e,i)} value={x.githubLink} required />
+                  <input type="text" id={`githubLink_${i}`} name="githubLink" className="form-control"  placeholder="Enter github link" onChange={ e=>handleinputchange(e,i)} value={x.gitHubLink} required />
                </div>
 
                <ProjectDescription index={i} description={x.description} onChange={handleProjectDescriptionChange} onRemove={handleProjectDescriptionDelete} data={x.description} />
