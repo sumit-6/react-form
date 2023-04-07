@@ -14,8 +14,8 @@ function ProfilePictureEditForm(props) {
               <div className="row pt-3">
               <h2>Edit Profile Picture</h2>
             <div className="form-group">
-                <label>Profile Picture: </label>
-                <input type="file" name="profilePicture" className="form-control" placeholder="Enter profile picture" />
+                <label for="profilePicture" className="form-label">Profile Picture: </label>
+                <input type="file" id="profilePicture" name="profilePicture" className="form-control" placeholder="Enter profile picture" required />
                 <button type="submit" class="btn btn-warning btn-lg m-3" style={{width: '90%'}}>Submit</button>
                </div>
                

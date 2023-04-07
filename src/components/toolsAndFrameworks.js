@@ -32,13 +32,13 @@ function ToolsAndFrameworks(props) {
               return(
               <div className="row mb-3">
                  <div className="form-group col-md-4">
-                 <label >Tool Name: </label>
-                  <input type="text"  name="toolName" className="form-control"  placeholder="Enter Tool Name" onChange={ e=>handleinputchange(e,i)} value={x.toolName} />
+                 <label for={`toolName_${i}`} className="form-label">Tool Name: </label>
+                  <input type="text" id={`toolName_${i}`} name="toolName" className="form-control"  placeholder="Enter Tool Name" onChange={ e=>handleinputchange(e,i)} value={x.toolName} required />
                </div>
 
                <div className="form-group col-md-4">
-                 <label >Level: </label>
-                  <input type="number"  name="toolLevel" className="form-control"  placeholder="Enter Tool Level" onChange={ e=>handleinputchange(e,i)} value={x.toolLevel} />
+                 <label for={`toolLevel_${i}`}>Level: </label>
+                  <input type="number" id={`tooLevel_${i}`} name="toolLevel" className="form-control"  placeholder="Enter Tool Level" onChange={ e=>handleinputchange(e,i)} value={x.toolLevel} required />
                </div>
                
                <div className="form-group col-md-2 mt-4">

@@ -46,21 +46,21 @@ function MyProjects(props) {
               <div className="row">
                 
                  <div className="form-group col-md-4">
-                 <label >Project Name: </label>
-                  <input type="text"  name="projectName" className="form-control"  placeholder="Enter Project Name" onChange={ e=>handleinputchange(e,i)} value={x.projectName} />
+                 <label for={`projectName_${i}`} className="form-label">Project Name: </label>
+                  <input type="text" id={`projectName_${i}`} name="projectName" className="form-control"  placeholder="Enter Project Name" onChange={ e=>handleinputchange(e,i)} value={x.projectName} required />
                </div>
                
                
                  <div className="form-group col-md-4">
-                 <label >Github Link: </label>
-                  <input type="text"  name="githubLink" className="form-control"  placeholder="Enter github link" onChange={ e=>handleinputchange(e,i)} value={x.githubLink} />
+                 <label for={`githubLink_${i}`} className="form-label">Github Link: </label>
+                  <input type="text" id={`githubLink_${i}`} name="githubLink" className="form-control"  placeholder="Enter github link" onChange={ e=>handleinputchange(e,i)} value={x.githubLink} required />
                </div>
 
                <ProjectDescription index={i} description={x.description} onChange={handleProjectDescriptionChange} onRemove={handleProjectDescriptionDelete} data={x.description} />
                 
                  <div className="form-group col-md-4">
-                 <label >Project Link: </label>
-                  <input type="text"  name="projectLink" className="form-control"  placeholder="Enter project url" onChange={ e=>handleinputchange(e,i)} value={x.projectLink} />
+                 <label for={`projectLink_${i}`} className="form-label">Project Link: </label>
+                  <input type="text" id={`projectLink_${i}`} name="projectLink" className="form-control"  placeholder="Enter project url" onChange={ e=>handleinputchange(e,i)} value={x.projectLink} required />
                </div>
 
                <div className="form-group col-md-2 mt-4">

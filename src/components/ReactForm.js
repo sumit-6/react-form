@@ -11,7 +11,7 @@ function ReactForm() {
   return (
     <div className="App">
       <header className="App-header">
-        <form action="http://localhost:8000/portfolio/insert" method="POST" encType='multipart/form-data'>
+        <form action="http://localhost:8000/portfolio/insert" method="POST" encType='multipart/form-data' novalidate class="validated-form">
           <FirstLayer name='' telephone='' description='' instagram='' linkedIn='' email='' profilePicture={{url: null, filename: null}} mainDesignations={['']} />
           <br></br>
           <MyEducation data={[{institutionName: "", place: "", year: "", aggregate: "", coursePursuied: ""}]}/>

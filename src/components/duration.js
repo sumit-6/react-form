@@ -22,13 +22,13 @@ function Duration(props) {
        <div className="col-sm-12">
               <div className="row mb-3" key={`duration-${props.index}`}>
                  <div className="form-group col-md-4">
-                 <label >Start: </label>
-                  <input type="text"  name="start" className="form-control"  placeholder="Enter Start Date" onChange={(e)=> handleinputchange(e)} value={props.duration.start} />
+                 <label for={`start_${props.index}`} className="form-label">Start: </label>
+                  <input type="text" id={`start_${props.index}`}  name="start" className="form-control"  placeholder="Enter Start Date" onChange={(e)=> handleinputchange(e)} value={props.duration.start} required />
                </div>
                
                <div className="form-group col-md-4">
-                <label>End: </label>
-                <input type="text" name="end" className="form-control" placeholder="Enter End Date" onChange={(e)=> handleinputchange(e)} value={props.duration.end} />
+                <label for={`end_${props.index}`} className="form-label">End: </label>
+                <input type="text" id={`end_${props.index}`} name="end" className="form-control" placeholder="Enter End Date" onChange={(e)=> handleinputchange(e)} value={props.duration.end} required />
                </div>
 
                </div>

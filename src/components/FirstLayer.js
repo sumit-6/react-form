@@ -18,7 +18,7 @@ function FirstLayer(props) {
     }
     const handleFileChange = (e) => {
       const file = e.target.files[0];
-      console.log(file);
+      
       setinputObj({...inputObj, profilePicture: file})
     }
   return (
@@ -27,18 +27,18 @@ function FirstLayer(props) {
        <div className="col-sm-12">
               <div className="row">
                  <div className="form-group col-md-4">
-                 <label >Name: </label>
-                  <input type="text"  name="name" className="form-control"  placeholder="Enter Name" onChange={(e)=> handleinputchange(e)} value={inputObj.name}/>
+                 <label for="name" className="form-label">Name: </label>
+                  <input type="text" id="name" name="name" className="form-control"  placeholder="Enter Name" onChange={(e)=> handleinputchange(e)} value={inputObj.name} required/>
                </div>
                
                <div className="form-group col-md-4">
-                <label>Description: </label>
-                <textarea type="text" name="description" className="form-control" placeholder="Enter Description" onChange={(e)=> handleinputchange(e)} rows="4" cols="40" value={inputObj.description}  />
+                <label for="description" className="form-label">Description: </label>
+                <textarea type="text" id="description" name="description" className="form-control" placeholder="Enter Description" onChange={(e)=> handleinputchange(e)} rows="4" cols="40" value={inputObj.description} required />
                </div>
 
                {(inputObj.profilePicture.url == null) && <div className="form-group col-md-4">
-                <label>Profile Picture: </label>
-                <input type="file" name="profilePicture" className="form-control" placeholder="Enter profile picture" onChange={(e) => handleFileChange(e)}  />
+                <label for="profilePicture" className="form-label">Profile Picture: </label>
+                <input type="file" id="profilePicture" name="profilePicture" className="form-control" placeholder="Enter profile picture" onChange={(e) => handleFileChange(e)} required />
                </div>}
 
                {(inputObj.profilePicture.url) && <div className="form-group col-md-4">
@@ -49,23 +49,23 @@ function FirstLayer(props) {
                </div> }
                
                <div className="form-group col-md-4">
-                <label>LinkedIn: </label>
-                <input type="text" name="linkedIn" className="form-control" placeholder="Enter linkedIn profile url" onChange={(e)=> handleinputchange(e)} value={inputObj.linkedIn} />
+                <label for="linkedIn" className="form-label">LinkedIn: </label>
+                <input type="text" id="linkedIn" name="linkedIn" className="form-control" placeholder="Enter linkedIn profile url" onChange={(e)=> handleinputchange(e)} value={inputObj.linkedIn} required />
                </div>
 
                <div className="form-group col-md-4">
-                <label>Instagram: </label>
-                <input type="text" name="instagram" className="form-control" placeholder="Enter instagram profile url" onChange={(e)=> handleinputchange(e)} value={inputObj.instagram} />
+                <label for="instagram" className="form-label">Instagram: </label>
+                <input type="text" id="instagram" name="instagram" className="form-control" placeholder="Enter instagram profile url" onChange={(e)=> handleinputchange(e)} value={inputObj.instagram} required />
                </div>
 
                <div className="form-group col-md-4">
-                <label>Mobile Number: </label>
-                <input type="number" name="telephone" className="form-control" placeholder="Enter mobile number" onChange={(e)=> handleinputchange(e)} value={inputObj.telephone}/>
+                <label for="telephone" className="form-label">Mobile Number: </label>
+                <input type="number" id="telephone" name="telephone" className="form-control" placeholder="Enter mobile number" onChange={(e)=> handleinputchange(e)} value={inputObj.telephone} required/>
                </div>
 
                <div className="form-group col-md-4">
-                <label>Email: </label>
-                <input type="text" name="email" className="form-control" placeholder="Enter email" onChange={(e)=> handleinputchange(e)} value={inputObj.email}/>
+                <label for="email" className="form-label">Email: </label>
+                <input type="text" id="email" name="email" className="form-control" placeholder="Enter email" onChange={(e)=> handleinputchange(e)} value={inputObj.email} required/>
                </div>
 
                <MainDesignation mainDesignations={props.mainDesignations} />

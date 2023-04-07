@@ -26,7 +26,7 @@ function EditReactForm(props) {
   return (
     <div className="App">
       <header className="App-header">
-        {isReady && <form action={`http://localhost:8000/portfolio/edit/${props.id}`} method="POST">
+        {isReady && <form action={`http://localhost:8000/portfolio/edit/${props.id}`} method="POST" novalidate class="validated-form">
           <FirstLayer name={data.name} description={data.description} profilePicture={data.profilePicture} linkedIn={data.linkedIn} instagram={data.instagram} telephone={data.telephone} email={data.email} mainDesignations={data.mainDesignations}/>
           <br></br>
           

@@ -55,22 +55,22 @@ function MyExperience(props) {
               <div className="row">
                 
                  <div className="form-group col-md-4">
-                 <label >Role: </label>
-                  <input type="text"  name="role" className="form-control"  placeholder="Enter Role" onChange={ e=>handleinputchange(e,i)} value={inputList[i].role} />
+                 <label for={`role_${i}`} className="form-label">Role: </label>
+                  <input type="text" id={`role_${i}`} name="role" className="form-control"  placeholder="Enter Role" onChange={ e=>handleinputchange(e,i)} value={inputList[i].role} required />
                </div>
                
                
                  <div className="form-group col-md-4">
-                 <label >Company: </label>
-                  <input type="text"  name="company" className="form-control"  placeholder="Enter Company Name" onChange={ e=>handleinputchange(e,i)} value={inputList[i].company} />
+                 <label for={`role_${i}`} className="form-label">Company: </label>
+                  <input type="text" id={`role_${i}`} name="company" className="form-control"  placeholder="Enter Company Name" onChange={ e=>handleinputchange(e,i)} value={inputList[i].company} required />
                </div>
 
                <WorkDescription index={i} workDescription={x.workDescription}
                 onChange={handleWorkDescriptionChange} onRemove={handleWorkDescriptionDelete} data={x.workDescription}/>
                 
                  <div className="form-group col-md-4">
-                 <label >Certificate Url: </label>
-                  <input type="text"  name="certificate" className="form-control"  placeholder="Enter Certficate URL" onChange={ e=>handleinputchange(e,i)} value={inputList[i].certificate} />
+                 <label for={`certificate_${i}`} className="form-label">Certificate Url: </label>
+                  <input type="text" id={`certificate_${i}`}  name="certificate" className="form-control"  placeholder="Enter Certficate URL" onChange={ e=>handleinputchange(e,i)} value={inputList[i].certificate} required />
                </div>
 
                

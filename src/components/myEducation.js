@@ -35,32 +35,32 @@ function MyEducation(props) {
               return(
               <div className="row">
                 <div className="form-group col-md-4">
-                 <label >Institution Name: </label>
-                  <input type="text"  name="institutionName" className="form-control"  placeholder="Enter Institution" onChange={ e=>handleinputchange(e,i)} value={x.institutionName} />
+                 <label for={`institutionName_${i}`} className="form-label">Institution Name: </label>
+                  <input type="text" id={`institutionName_${i}`} name="institutionName" className="form-control"  placeholder="Enter Institution" onChange={ e=>handleinputchange(e,i)} value={x.institutionName} required/>
                </div>
                
                
                  <div className="form-group col-md-4">
-                 <label >Year: </label>
-                  <input type="number"  name="year" className="form-control"  placeholder="Enter end year" onChange={ e=>handleinputchange(e,i)} value={x.year} />
+                 <label for={`year_${i}`} className="form-label">Year: </label>
+                  <input type="number" id={`year_${i}`} name="year" className="form-control"  placeholder="Enter end year" onChange={ e=>handleinputchange(e,i)} value={x.year} required/>
                </div>
 
        
                  <div className="form-group col-md-4">
-                 <label >Place: </label>
-                  <input type="text"  name="place" className="form-control"  placeholder="Enter place" onChange={ e=>handleinputchange(e,i)} value={x.place} />
+                 <label for={`place_${i}`} className="form-label">Place: </label>
+                  <input type="text" id={`place_${i}`} name="place" className="form-control"  placeholder="Enter place" onChange={ e=>handleinputchange(e,i)} value={x.place} required/>
                </div>
 
                
                  <div className="form-group col-md-4">
-                 <label >Aggregate: </label>
-                  <input type="number" step="0.01"  name="aggregate" className="form-control"  placeholder="Enter aggregate" onChange={ e=>handleinputchange(e,i)} value={x.aggregate} />
+                 <label for={`aggregate_${i}`} className="form-label">Aggregate: </label>
+                  <input type="number" id={`aggregate_${i}`} step="0.01"  name="aggregate" className="form-control"  placeholder="Enter aggregate" onChange={ e=>handleinputchange(e,i)} value={x.aggregate} required/>
                </div>
 
                
                  <div className="form-group col-md-4">
-                 <label >Course Pursuied: </label>
-                  <input type="text"  name="coursePursuied" className="form-control"  placeholder="Enter courage pursuied" onChange={ e=>handleinputchange(e,i)} value={x.coursePursuied} />
+                 <label for={`coursePursuied_${i}`} className="form-label">Course Pursuied: </label>
+                  <input type="text" id={`coursePursuied_${i}`} name="coursePursuied" className="form-control"  placeholder="Enter courage pursuied" onChange={ e=>handleinputchange(e,i)} value={x.coursePursuied} required />
                </div>
 
                <div className="form-group col-md-2 mt-4">
