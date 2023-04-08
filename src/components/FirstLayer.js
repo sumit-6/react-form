@@ -65,7 +65,7 @@ function FirstLayer(props) {
 
                <div className="form-group col-md-4">
                 <label for="email" className="form-label">Email: </label>
-                <input type="text" id="email" name="email" className="form-control" placeholder="Enter email" onChange={(e)=> handleinputchange(e)} value={inputObj.email} required/>
+                <input type="email" id="email" name="email" className="form-control" placeholder="Enter email" onChange={(e)=> handleinputchange(e)} value={inputObj.email} required/>
                </div>
 
                <MainDesignation mainDesignations={props.mainDesignations} />
