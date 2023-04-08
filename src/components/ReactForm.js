@@ -18,7 +18,7 @@ function ReactForm() {
           <br></br>
           <MyExperience data={[{role: "", company: "", certificate: "", workDescription: [""], duration: {start: "", end: ""}}]}/>
           <br></br>
-          <MyProjects data={[{projectName: "", githubLink: "", projectLink: "", description: [""]}]}/>
+          <MyProjects data={[{projectName: "", gitHubLink: "", projectLink: "", description: [""]}]}/>
           <br></br>
           <MySkills data={{programmingSkills: [{skillName: "", skillLevel: ""}], toolsAndFrameworks: [{toolName: "", toolLevel: ""}]}}/>
           <br></br>
