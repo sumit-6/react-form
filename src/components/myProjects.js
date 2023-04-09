@@ -72,6 +72,10 @@ function MyProjects(props) {
                <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More</button>
                }
                </div>
+               {
+                inputList.length-1 !== i &&
+                <hr className="col-md-12" style={{padding: '1rem'}}></hr>
+               }
             </div>
               );
             })}
