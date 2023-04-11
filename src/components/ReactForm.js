@@ -6,10 +6,12 @@ import MyProjects from './myProjects';
 import MySkills from './mySkills';
 import MyAchievements from './myAchievements';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import useUser from '../hooks/useUser';
 
 function ReactForm() {
+  const {user, isLoading} = useUser();
   return (
-    <div className="App">
+    user && <div className="App">
       <header className="App-header">
         <form action="http://localhost:8000/portfolio/insert" method="POST" encType='multipart/form-data' novalidate class="validated-form">
           <FirstLayer name='' telephone='' description='' instagram='' linkedIn='' email='' profilePicture={{url: null, filename: null}} mainDesignations={['']} />
