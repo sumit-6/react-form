@@ -3,6 +3,8 @@ import EditReactForm from "./components/EditReactForm";
 import ProfilePictureEditForm from "./components/ProfilePictureEditForm";
 import {Routes, Route, useLocation} from 'react-router-dom';
 import bsCustomFileInput from 'bs-custom-file-input';
+import LoginPage from "./components/LoginPage";
+import CreateAccountPage from "./components/CreateAccountPage";
 function App() {
   const location = useLocation();
   const ID = location.pathname.split('/')[2];
@@ -11,6 +13,8 @@ function App() {
       <Route path="/" element={<ReactForm />} />
       <Route path="/edit/:id" element={<EditReactForm id={ID} />} />
       <Route path="/edit/:id/profilePicture" element={<ProfilePictureEditForm id={ID}/>} />
+      <Route path='/login' element={<LoginPage />} />
+      <Route path='/create-account' element={<CreateAccountPage />} />
     </Routes>
   );
 }

@@ -8,13 +8,29 @@ import MyAchievements from './myAchievements';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import useUser from '../hooks/useUser';
+import { useNavigate } from 'react-router-dom';
+import { auth } from '../index';
+import { signOut } from 'firebase/auth';
 
 function EditReactForm(props) {
     const [isReady, setIsReady] = useState(false);
   const [data, setData] = useState({});
+  const {user, isLoading} = useUser();
+  const navigate = useNavigate();
+  const handleLogout = (e) => {
+    e.preventDefault();
+    signOut(auth).then(() => {
+      navigate('/');
+    }).catch((err) => {
+      console.log(err.message);
+    })
+  }
+
   useEffect(() => {(async () => {
         //console.log('hello');
-            const response = await axios.get(`http://localhost:8000/api/portfolio/${props.id}`);
+            const token = user && await user.getIdToken();
+            const response = await axios.get(`http://localhost:8000/api/portfolio/${props.id}`, {headers: {authtoken: token}});
             const dataRes = response.data;
             setData(dataRes);
             console.log(dataRes);
@@ -26,7 +42,7 @@ function EditReactForm(props) {
   return (
     <div className="App">
       <header className="App-header">
-        {isReady && <form action={`http://localhost:8000/portfolio/edit/${props.id}`} method="POST" novalidate class="validated-form">
+        {(isReady && user) ? <form action={`http://localhost:8000/portfolio/edit/${props.id}`} method="POST" novalidate class="validated-form">
           <FirstLayer name={data.name} description={data.description} profilePicture={data.profilePicture} linkedIn={data.linkedIn} instagram={data.instagram} telephone={data.telephone} email={data.email} mainDesignations={data.mainDesignations}/>
           <br></br>
           
@@ -40,8 +56,10 @@ function EditReactForm(props) {
           <br></br>
           <MyAchievements data={data.myAchievements}/>
           <button type="submit" class="btn btn-warning btn-lg m-3">Submit</button>
-          
-        </form>}
+          <button type="button" onClick={handleLogout} className="btn btn-warning btn-lg m-3">Logout</button>
+        </form> : <div>
+            <h1 style={{color: "black"}}>You can't perform this action!!</h1>
+          </div>}
         <br></br>
       </header>
     </div>

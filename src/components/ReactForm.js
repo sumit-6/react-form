@@ -6,13 +6,26 @@ import MyProjects from './myProjects';
 import MySkills from './mySkills';
 import MyAchievements from './myAchievements';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import useUser from '../hooks/useUser';
+import { useNavigate } from 'react-router-dom';
+import { auth } from '../index';
+import { signOut } from 'firebase/auth';
 
 function ReactForm() {
+  const {user, isLoading} = useUser();
+  const navigate = useNavigate();
+  const handleLogout = (e) => {
+    e.preventDefault();
+    signOut(auth).then(() => {
+      navigate('/');
+    }).catch((err) => {
+      console.log(err.message);
+    })
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <form action="http://localhost:8000/portfolio/insert" method="POST" encType='multipart/form-data' novalidate class="validated-form">
+        {user ? <form action="http://localhost:8000/portfolio/insert" method="POST" encType='multipart/form-data' novalidate class="validated-form">
           <FirstLayer name='' telephone='' description='' instagram='' linkedIn='' email='' profilePicture={{url: null, filename: null}} mainDesignations={['']} />
           <br></br>
           <MyEducation data={[{institutionName: "", place: "", year: "", aggregate: "", coursePursuied: ""}]}/>
@@ -24,9 +37,16 @@ function ReactForm() {
           <MySkills data={{programmingSkills: [{skillName: "", skillLevel: ""}], toolsAndFrameworks: [{toolName: "", toolLevel: ""}]}}/>
           <br></br>
           <MyAchievements data={[""]}/>
-          <button type="submit" class="btn btn-warning btn-lg m-3">Submit</button>
-          
-        </form>
+          <button type="submit" className="btn btn-warning btn-lg m-3">Submit</button>
+          <button onClick={handleLogout} className="btn btn-warning btn-lg m-3">Logout</button>
+        </form> : <div>
+            <button onClick={() => navigate('login')} className="btn btn-warning btn-lg m-3">
+              Log In
+            </button>
+            <button onClick={() => navigate("create-account")} className="btn btn-warning btn-lg m-3">
+              Sign Up
+            </button>
+          </div>}
         <br></br>
       </header>
     </div>
