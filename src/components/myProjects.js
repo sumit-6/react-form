@@ -53,7 +53,7 @@ function MyProjects(props) {
                
                  <div className="form-group col-md-4">
                  <label for={`githubLink_${i}`} className="form-label">Github Link: </label>
-                  <input type="text" id={`githubLink_${i}`} name="gitHubLink" className="form-control"  placeholder="Enter github link" onChange={ e=>handleinputchange(e,i)} value={x.gitHubLink} required />
+                  <input type="text" id={`githubLink_${i}`} name="gitHubLink" className="form-control"  placeholder="Enter github link" onChange={ e=>handleinputchange(e,i)} value={x.gitHubLink} />
                </div>
 
                <ProjectDescription index={i} description={x.description} onChange={handleProjectDescriptionChange} onRemove={handleProjectDescriptionDelete} data={x.description} />
