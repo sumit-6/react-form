@@ -9,7 +9,7 @@ function ProgrammingSkills(props) {
     const list= [...inputList];
     list[index][name]= value;
     setinputList(list);
-
+    props.onChange(name, value, index);
   }
  
   const handleremove= (event, index)=>{
@@ -17,10 +17,12 @@ function ProgrammingSkills(props) {
     const list=[...inputList];
     list.splice(index,1);
     setinputList(list);
+    props.onRemove(index);
   }
 
   const handleaddclick=()=>{ 
     setinputList([...inputList, {skillName: "", skillLevel: ""}]);
+    props.onObjChange('programmingSkills', [...inputList, {skillName: "", skillLevel: ""}]);
   }
   const skillLevelOptions = ["Expert", "Intermediate", "Beginner"];
   return (
@@ -35,12 +37,12 @@ function ProgrammingSkills(props) {
                 
                  <div className="form-group col-md-4">
                  <label for={`skillName_${i}`} className="form-label">Skill Name: </label>
-                  <input type="text" id={`skillName_${i}`} name="skillName" className="form-control"  placeholder="Enter Skill Name" onChange={ e=>handleinputchange(e,i)} value={x.name} required />
+                  <input type="text" id={`skillName_${i}`} name="skillName" className="form-control"  placeholder="Enter Skill Name" onChange={ e=>handleinputchange(e,i)} value={inputList[i].skillName} required />
                </div>
 
                <div className="form-group col-md-4">
                <label htmlFor={`skillLevel_${i}`} className="form-label">Level: </label>
-                  <select id={`skillLevel_${i}`} name="skillLevel" className="form-control" onChange={ e=>handleinputchange(e,i)} value={x.level} required >
+                  <select id={`skillLevel_${i}`} name="skillLevel" className="form-control" onChange={ e=>handleinputchange(e,i)} value={inputList[i].skillLevel} required >
                     <option value="">Skill Level Options</option>
                     {skillLevelOptions.map(option => (
                       <option key={option} value={option}>{option}</option>
