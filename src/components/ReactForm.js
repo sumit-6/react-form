@@ -10,6 +10,7 @@ import useUser from '../hooks/useUser';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../index';
 import { signOut } from 'firebase/auth';
+import axios from 'axios';
 
 function ReactForm() {
   const {user, isLoading} = useUser();
@@ -21,6 +22,18 @@ function ReactForm() {
     }).catch((err) => {
       console.log(err.message);
     })
+  }
+  const handleSubmit = async () => {
+    const form = document.querySelector('.validated-form');
+    const formData = new FormData(form);
+  
+    const config = {
+      headers: {
+        'authtoken': user.getIdToken()
+      }
+    }
+  
+    await axios.put('http://localhost:8000/portfolio/insert', formData, config)
   }
   return (
     <div className="App">
