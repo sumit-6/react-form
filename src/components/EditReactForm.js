@@ -40,6 +40,18 @@ function EditReactForm(props) {
         })();
     }, [user]);
    
+    const handleSubmit = async () => {
+      const form = document.querySelector('.validated-form');
+      const formData = new FormData(form);
+    
+      const config = {
+        headers: {
+          'authtoken': user.getIdToken()
+        }
+      }
+    
+      await axios.put('http://localhost:8000/portfolio/insert', formData, config)
+    }
     
   return (
     <div className="App">
@@ -47,7 +59,7 @@ function EditReactForm(props) {
         {isLoading && <div>
           <h1 style={{color: "black"}}>Loading....</h1>
           </div>}
-        {(user && user.uid === data.user_id) && <form action={`http://localhost:8000/portfolio/edit/${props.id}`} method="POST" novalidate class="validated-form">
+        {(isReady && user && user.uid === data.user_id) && <form action={`http://localhost:8000/portfolio/edit/${props.id}`} method="POST" novalidate class="validated-form">
           <FirstLayer name={data.name} description={data.description} profilePicture={data.profilePicture} linkedIn={data.linkedIn} instagram={data.instagram} telephone={data.telephone} email={data.email} mainDesignations={data.mainDesignations}/>
           <br></br>
           
@@ -60,7 +72,7 @@ function EditReactForm(props) {
           <MySkills data={data.mySkills}/>
           <br></br>
           <MyAchievements data={data.myAchievements}/>
-          <button type="submit" class="btn btn-warning btn-lg m-3">Submit</button>
+          <button onClick={handleSubmit} class="btn btn-warning btn-lg m-3">Submit</button>
           <button type="button" onClick={handleLogout} className="btn btn-warning btn-lg m-3">Logout</button>
         </form>}
         {(!isLoading && user && (user.uid !== data.user_id)) && <div>

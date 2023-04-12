@@ -30,7 +30,8 @@ function ReactForm() {
     const config = {
       headers: {
         'authtoken': user.getIdToken()
-      }
+      },
+      enctype: 'multipart/form-data'
     }
   
     await axios.put('http://localhost:8000/portfolio/insert', formData, config)
@@ -53,7 +54,7 @@ function ReactForm() {
           <MySkills data={{programmingSkills: [{skillName: "", skillLevel: ""}], toolsAndFrameworks: [{toolName: "", toolLevel: ""}]}}/>
           <br></br>
           <MyAchievements data={[""]}/>
-          <button type="submit" className="btn btn-warning btn-lg m-3">Submit</button>
+          <button onClick={handleSubmit} className="btn btn-warning btn-lg m-3">Submit</button>
           <button onClick={handleLogout} className="btn btn-warning btn-lg m-3">Logout</button>
         </form> }
         {(!isLoading && !user) && <div>
