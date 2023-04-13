@@ -84,8 +84,8 @@ function EditReactForm(props) {
           <MySkills data={data.mySkills}/>
           <br></br>
           <MyAchievements data={data.myAchievements}/>
-          <button onClick={handleSubmit} class="btn btn-warning btn-lg m-3">Submit</button>
-          <button type="button" onClick={e => handleLogout(e)} className="btn btn-warning btn-lg m-3">Logout</button>
+          <button onClick={(e) => handleSubmit(e)} class="btn btn-warning btn-lg m-3">Submit</button>
+          <button type="submit" onClick={e => handleLogout(e)} className="btn btn-warning btn-lg m-3">Logout</button>
           <button type="button" onClick={e => handleDelete(e)} className="btn btn-danger btn-lg m-3">Delete</button>
         </form>}
         {(!isLoading && user && (user.uid !== data.user_id)) && <div>
