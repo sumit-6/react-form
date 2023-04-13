@@ -61,7 +61,7 @@ function EditReactForm(props) {
         }
       }
     
-      await axios.put(`http://localhost:8000/portfolio/delete/${props.data}`, config)
+      await axios.post(`http://localhost:8000/portfolio/delete/${props.data}`, config)
     }
     
   return (
