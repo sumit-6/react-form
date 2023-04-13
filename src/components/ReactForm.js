@@ -76,7 +76,7 @@ function ReactForm() {
           <MyAchievements data={[""]}/>
           <button onClick={(e) => handleSubmit(e)} className="btn btn-warning btn-lg m-3">Submit</button>
           <button onClick={(e) => handleLogout(e)} className="btn btn-warning btn-lg m-3">Logout</button>
-          {isAvailable && <a href={`https://react-form-ten-steel.vercel.app/edit/${id}`}><button className="btn btn-success btn-lg m-3">Edit My Profile</button></a>}
+          {isAvailable && <a href={`https://react-form-ten-steel.vercel.app/edit/${id}`} rel="noopener noreferrer"><button className="btn btn-success btn-lg m-3">Edit My Profile</button></a>}
         </form> }
         {(!isLoading && !user) && <div>
             <h1 style={{color: "black"}}>You are not logged In</h1>
