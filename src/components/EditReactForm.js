@@ -44,7 +44,7 @@ function EditReactForm(props) {
       e.preventDefault();
       const form = document.querySelector('.validated-form');
       const formData = new FormData(form);
-    
+      console.log(formData);
       const config = {
         headers: {
           'authtoken': await user.getIdToken()
@@ -71,7 +71,7 @@ function EditReactForm(props) {
         {isLoading && <div>
           <h1 style={{color: "black"}}>Loading....</h1>
           </div>}
-        {(isReady && user && user.uid === data.user_id) && <form novalidate class="validated-form">
+        {(isReady && user && user.uid === data.user_id) && <form novalidate className="validated-form">
           <FirstLayer name={data.name} description={data.description} profilePicture={data.profilePicture} linkedIn={data.linkedIn} instagram={data.instagram} telephone={data.telephone} email={data.email} mainDesignations={data.mainDesignations}/>
           <br></br>
           
