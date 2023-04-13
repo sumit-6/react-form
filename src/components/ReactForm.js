@@ -35,7 +35,12 @@ function ReactForm() {
       enctype: 'multipart/form-data'
     }
   
-    await axios.post('http://localhost:8000/portfolio/insert', formData, config)
+    const response = await axios.post('http://localhost:8000/portfolio/insert', formData, config);
+    if(response.data === "Success") {
+      window.location.href = 'http://localhost:3000/portfolio';
+    } else {
+      window.location.href = 'http://localhost:3000/';
+    }
   }
   return (
     <div className="App">

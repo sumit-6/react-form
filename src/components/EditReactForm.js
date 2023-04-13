@@ -14,6 +14,7 @@ import { auth } from '../index';
 import { signOut } from 'firebase/auth';
 
 function EditReactForm(props) {
+
     const [isReady, setIsReady] = useState(false);
   const [data, setData] = useState({});
   const {user, isLoading} = useUser();
@@ -42,16 +43,37 @@ function EditReactForm(props) {
    
     const handleSubmit = async (e) => {
       e.preventDefault();
-      const form = document.querySelector('.validated-form');
-      const formData = new FormData(form);
-      console.log("formData:", formData);
-      const config = {
-        headers: {
-          'authtoken': await user.getIdToken()
+      try {
+        const form = document.querySelector(".validated-form");
+        console.log(form);
+        const formData_empty = new FormData(form);
+        const formData = {};
+        for (const key of formData_empty.entries()) {
+            if(!formData[key[0]]) formData[key[0]] = key[1];
+            else if(typeof(formData[key[0]]) !== 'object') {
+              formData[key[0]] = [formData[key[0]]];
+              formData[key[0]].push(key[1]);
+            } else {
+              formData[key[0]].push(key[1]);
+            }
+        }
+        console.log(formData);
+        const config = {
+          headers: {
+            'authtoken': await user.getIdToken()
+          }
+        }
+    
+        const response = await axios.post(`http://localhost:8000/portfolio/edit/${props.id}`, formData, config)
+        if(response.data === "Success") {
+          window.location.href = `http://localhost:3000/portfolio`;
+        } else {
+          window.location.href = 'http://localhost:3000/'
         }
       }
-    
-      await axios.post(`http://localhost:8000/portfolio/edit/${props.id}`, formData, config)
+      catch(err) {
+        console.error(err);
+      }
     }
 
     const handleDelete = async (e) => {
@@ -71,7 +93,7 @@ function EditReactForm(props) {
         {isLoading && <div>
           <h1 style={{color: "black"}}>Loading....</h1>
           </div>}
-        {(isReady && user && user.uid === data.user_id) && <form novalidate className="validated-form">
+        {(isReady && user && user.uid === data.user_id) && <form enctype="application/json" novalidate className="validated-form">
           <FirstLayer name={data.name} description={data.description} profilePicture={data.profilePicture} linkedIn={data.linkedIn} instagram={data.instagram} telephone={data.telephone} email={data.email} mainDesignations={data.mainDesignations}/>
           <br></br>
           
@@ -84,9 +106,9 @@ function EditReactForm(props) {
           <MySkills data={data.mySkills}/>
           <br></br>
           <MyAchievements data={data.myAchievements}/>
-          <button onClick={(e) => handleSubmit(e)} class="btn btn-warning btn-lg m-3">Submit</button>
-          <button type="submit" onClick={e => handleLogout(e)} className="btn btn-warning btn-lg m-3">Logout</button>
-          <button type="button" onClick={e => handleDelete(e)} className="btn btn-danger btn-lg m-3">Delete</button>
+          <button onClick={handleSubmit} className="btn btn-warning btn-lg m-3">Submit</button>
+          <button onClick={e => handleLogout(e)} className="btn btn-warning btn-lg m-3">Logout</button>
+          <button onClick={e => handleDelete(e)} className="btn btn-danger btn-lg m-3">Delete</button>
         </form>}
         {(!isLoading && user && (user.uid !== data.user_id)) && <div>
           <h1 style={{color: "black"}}>You can't perform this action</h1>
