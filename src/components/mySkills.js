@@ -39,9 +39,9 @@ function MySkills(props) {
      <div className="row card shadow-lg bg-body rounded">
        <div className="col-sm-12 box">
               <div className="row">
-                 <ProgrammingSkills data={props.data.programmingSkills} onChange={handleProgrammingSkills} onRemove={handleProgrammingSkillsRemove} onObjChange={handleObjChange}/>
+                 <ProgrammingSkills data={inputObj.programmingSkills} onChange={handleProgrammingSkills} onRemove={handleProgrammingSkillsRemove} onObjChange={handleObjChange}/>
                  <br></br>
-                 <ToolsAndFrameworks data={props.data.toolsAndFrameworks} onChange={handleToolsAndFramework} onRemove={handleToolsAndFrameworkRemove} onObjChange={handleObjChange} />
+                 <ToolsAndFrameworks data={inputObj.toolsAndFrameworks} onChange={handleToolsAndFramework} onRemove={handleToolsAndFrameworkRemove} onObjChange={handleObjChange} />
 
                </div>
             </div>
