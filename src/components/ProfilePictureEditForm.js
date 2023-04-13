@@ -25,7 +25,7 @@ function ProfilePictureEditForm(props) {
       
         const response = await axios.post(`http://localhost:8000/edit/profilePicture/${props.id}`, formData, config)
         if(response.data === "Success") {
-            window.location.href = `http://localhost:3001/edit/${props.id}`;
+            window.location.href = `https://react-form-ten-steel.vercel.app/edit/${props.id}`;
         } else {
             window.location.href = "http://localhost:3000/";
         }
