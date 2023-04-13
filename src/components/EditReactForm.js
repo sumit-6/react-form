@@ -46,11 +46,22 @@ function EditReactForm(props) {
     
       const config = {
         headers: {
-          'authtoken': user.getIdToken()
+          'authtoken': await user.getIdToken()
         }
       }
     
       await axios.put('http://localhost:8000/portfolio/insert', formData, config)
+    }
+
+    const handleDelete = async () => {
+    
+      const config = {
+        headers: {
+          'authtoken': user.getIdToken()
+        }
+      }
+    
+      await axios.put(`http://localhost:8000/portfolio/delete/${props.data}`, config)
     }
     
   return (
@@ -74,6 +85,7 @@ function EditReactForm(props) {
           <MyAchievements data={data.myAchievements}/>
           <button onClick={handleSubmit} class="btn btn-warning btn-lg m-3">Submit</button>
           <button type="button" onClick={handleLogout} className="btn btn-warning btn-lg m-3">Logout</button>
+          <button type="button" onClick={handleDelete} className="btn btn-danger btn-lg m-3">Delete</button>
         </form>}
         {(!isLoading && user && (user.uid !== data.user_id)) && <div>
           <h1 style={{color: "black"}}>You can't perform this action</h1>

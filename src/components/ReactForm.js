@@ -29,7 +29,7 @@ function ReactForm() {
   
     const config = {
       headers: {
-        'authtoken': user.getIdToken()
+        'authtoken': await user.getIdToken()
       },
       enctype: 'multipart/form-data'
     }
@@ -42,7 +42,7 @@ function ReactForm() {
       {isLoading && <div>
           <h1 style={{color: "black"}}>Loading....</h1>
           </div>}
-        {(!isLoading && user) && <form action="http://localhost:8000/portfolio/insert" method="POST" encType='multipart/form-data' novalidate class="validated-form">
+        {(!isLoading && user) && <form encType='multipart/form-data' novalidate class="validated-form">
           <FirstLayer name='' telephone='' description='' instagram='' linkedIn='' email='' profilePicture={{url: null, filename: null}} mainDesignations={['']} />
           <br></br>
           <MyEducation data={[{institutionName: "", place: "", year: "", aggregate: "", coursePursuied: ""}]}/>
