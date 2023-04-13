@@ -40,7 +40,8 @@ function EditReactForm(props) {
         })();
     }, [user]);
    
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+      e.preventDefault();
       const form = document.querySelector('.validated-form');
       const formData = new FormData(form);
     
@@ -53,11 +54,11 @@ function EditReactForm(props) {
       await axios.post('http://localhost:8000/portfolio/insert', formData, config)
     }
 
-    const handleDelete = async () => {
-    
+    const handleDelete = async (e) => {
+      e.preventDefault();
       const config = {
         headers: {
-          'authtoken': user.getIdToken()
+          'authtoken': await user.getIdToken()
         }
       }
     
@@ -70,7 +71,7 @@ function EditReactForm(props) {
         {isLoading && <div>
           <h1 style={{color: "black"}}>Loading....</h1>
           </div>}
-        {(isReady && user && user.uid === data.user_id) && <form action={`http://localhost:8000/portfolio/edit/${props.id}`} method="POST" novalidate class="validated-form">
+        {(isReady && user && user.uid === data.user_id) && <form novalidate class="validated-form">
           <FirstLayer name={data.name} description={data.description} profilePicture={data.profilePicture} linkedIn={data.linkedIn} instagram={data.instagram} telephone={data.telephone} email={data.email} mainDesignations={data.mainDesignations}/>
           <br></br>
           
@@ -84,8 +85,8 @@ function EditReactForm(props) {
           <br></br>
           <MyAchievements data={data.myAchievements}/>
           <button onClick={handleSubmit} class="btn btn-warning btn-lg m-3">Submit</button>
-          <button type="button" onClick={handleLogout} className="btn btn-warning btn-lg m-3">Logout</button>
-          <button type="button" onClick={handleDelete} className="btn btn-danger btn-lg m-3">Delete</button>
+          <button type="button" onClick={e => handleLogout(e)} className="btn btn-warning btn-lg m-3">Logout</button>
+          <button type="button" onClick={e => handleDelete(e)} className="btn btn-danger btn-lg m-3">Delete</button>
         </form>}
         {(!isLoading && user && (user.uid !== data.user_id)) && <div>
           <h1 style={{color: "black"}}>You can't perform this action</h1>

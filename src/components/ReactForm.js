@@ -35,9 +35,7 @@ function ReactForm() {
       enctype: 'multipart/form-data'
     }
   
-    axios.post('http://localhost:8000/portfolio/insert', formData, config)
-    .then((response) => {console.log(response)})
-    .catch((err) => {console.log(err.message)})
+    await axios.post('http://localhost:8000/portfolio/insert', formData, config)
   }
   return (
     <div className="App">
