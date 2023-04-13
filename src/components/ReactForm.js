@@ -11,10 +11,24 @@ import { useNavigate } from 'react-router-dom';
 import { auth } from '../index';
 import { signOut } from 'firebase/auth';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 function ReactForm() {
+  const [id, setId] = useState(null);
+  const [isAvailable, setIsAvailable] = useState(false);
   const {user, isLoading} = useUser();
   const navigate = useNavigate();
+  useEffect(() => {(async() => {
+    console.log(user);
+    const token = user && await user.getIdToken();
+    const response = await axios.get(`http://localhost:8000/api/getID/${user.uid}`, {headers: {authtoken: token}});
+    if(response.data !== 'Failure') {
+      const dataRes = response.data;
+      setId(dataRes);
+      setIsAvailable(true);
+    }
+  })();
+  }, [user]);
   const handleLogout = (e) => {
     e.preventDefault();
     signOut(auth).then(() => {
@@ -62,6 +76,7 @@ function ReactForm() {
           <MyAchievements data={[""]}/>
           <button onClick={(e) => handleSubmit(e)} className="btn btn-warning btn-lg m-3">Submit</button>
           <button onClick={(e) => handleLogout(e)} className="btn btn-warning btn-lg m-3">Logout</button>
+          {isAvailable && <a href={`https://react-form-ten-steel.vercel.app/edit/${id}`}><button className="btn btn-success btn-lg m-3">Edit My Profile</button></a>}
         </form> }
         {(!isLoading && !user) && <div>
             <h1 style={{color: "black"}}>You are not logged In</h1>
