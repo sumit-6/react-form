@@ -44,7 +44,7 @@ function EditReactForm(props) {
       e.preventDefault();
       const form = document.querySelector('.validated-form');
       const formData = new FormData(form);
-      console.log(formData);
+      console.log("formData:", formData);
       const config = {
         headers: {
           'authtoken': await user.getIdToken()
