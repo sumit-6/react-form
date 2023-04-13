@@ -68,7 +68,7 @@ function EditReactForm(props) {
         if(response.data === "Success") {
           window.location.href = `http://localhost:3000/portfolio`;
         } else {
-          window.location.href = 'http://localhost:3000/'
+          window.location.href = `http://localhost:3000/`;
         }
       }
       catch(err) {
