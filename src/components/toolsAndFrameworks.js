@@ -36,12 +36,12 @@ function ToolsAndFrameworks(props) {
               <div className="row mb-3">
                  <div className="form-group col-md-4">
                  <label for={`toolName_${i}`} className="form-label">Tool Name: </label>
-                  <input type="text" id={`toolName_${i}`} name="toolName" className="form-control"  placeholder="Enter Tool Name" onChange={ e=>handleinputchange(e,i)} value={inputList[i].toolName} required />
+                  <input type="text" id={`toolName_${i}`} name="toolName" className="form-control"  placeholder="Enter Tool Name" onChange={ e=>handleinputchange(e,i)} value={x.toolName} required />
                </div>
 
                <div className="form-group col-md-4">
                <label htmlFor={`toolLevel_${i}`} className="form-label">Level: </label>
-                  <select id={`toolLevel_${i}`} name="toolLevel" className="form-control" onChange={ e=>handleinputchange(e,i)} value={inputList[i].toolLevel} required >
+                  <select id={`toolLevel_${i}`} name="toolLevel" className="form-control" onChange={ e=>handleinputchange(e,i)} value={x.toolLevel} required >
                     <option value="">Select Skill Level</option>
                     {toolLevelOptions.map(option => (
                       <option key={option} value={option}>{option}</option>
