@@ -23,7 +23,8 @@ function ReactForm() {
       console.log(err.message);
     })
   }
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const form = document.querySelector('.validated-form');
     const formData = new FormData(form);
   
@@ -54,8 +55,8 @@ function ReactForm() {
           <MySkills data={{programmingSkills: [{skillName: "", skillLevel: ""}], toolsAndFrameworks: [{toolName: "", toolLevel: ""}]}}/>
           <br></br>
           <MyAchievements data={[""]}/>
-          <button onClick={handleSubmit} className="btn btn-warning btn-lg m-3">Submit</button>
-          <button onClick={handleLogout} className="btn btn-warning btn-lg m-3">Logout</button>
+          <button onClick={(e) => handleSubmit(e)} className="btn btn-warning btn-lg m-3">Submit</button>
+          <button onClick={(e) => handleLogout(e)} className="btn btn-warning btn-lg m-3">Logout</button>
         </form> }
         {(!isLoading && !user) && <div>
             <h1 style={{color: "black"}}>You are not logged In</h1>
