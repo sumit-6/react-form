@@ -35,7 +35,9 @@ function ReactForm() {
       enctype: 'multipart/form-data'
     }
   
-    await axios.put('http://localhost:8000/portfolio/insert', formData, config)
+    axios.post('http://localhost:8000/portfolio/insert', formData, config)
+    .then((response) => {console.log(response)})
+    .catch((err) => {console.log(err.message)})
   }
   return (
     <div className="App">
@@ -43,7 +45,7 @@ function ReactForm() {
       {isLoading && <div>
           <h1 style={{color: "black"}}>Loading....</h1>
           </div>}
-        {(!isLoading && user) && <form encType='multipart/form-data' novalidate class="validated-form">
+        {(!isLoading && user) && <form encType='multipart/form-data' novalidate className="validated-form">
           <FirstLayer name='' telephone='' description='' instagram='' linkedIn='' email='' profilePicture={{url: null, filename: null}} mainDesignations={['']} />
           <br></br>
           <MyEducation data={[{institutionName: "", place: "", year: "", aggregate: "", coursePursuied: ""}]}/>

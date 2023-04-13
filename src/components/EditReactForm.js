@@ -50,7 +50,7 @@ function EditReactForm(props) {
         }
       }
     
-      await axios.put('http://localhost:8000/portfolio/insert', formData, config)
+      await axios.post('http://localhost:8000/portfolio/insert', formData, config)
     }
 
     const handleDelete = async () => {
