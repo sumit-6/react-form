@@ -33,7 +33,7 @@ function ProgrammingSkills(props) {
             { 
             inputList.map( (x,i)=>{
               return(
-              <div className="form-group row">
+              <div className="row mb-3">
                 
                  <div className="form-group col-md-4">
                  <label for={`skillName_${i}`} className="form-label">Skill Name: </label>
