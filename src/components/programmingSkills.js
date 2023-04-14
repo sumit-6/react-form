@@ -36,8 +36,9 @@ function ProgrammingSkills(props) {
               <div className="row mb-3">
                 
                  <div className="form-group col-md-4">
-                 <label for={`skillName_${i}`} className="form-label">Skill Name: </label>
+                 <label htmlFor={`skillName_${i}`} className="form-label">Skill Name: </label>
                   <input type="text" id={`skillName_${i}`} name="skillName" className="form-control"  placeholder="Enter Skill Name" onChange={ e=>handleinputchange(e,i)} value={x.skillName} required />
+                  <div className="valid-feedback">Looks Good</div>
                </div>
 
                <div className="form-group col-md-4">
@@ -48,6 +49,7 @@ function ProgrammingSkills(props) {
                       <option key={option} value={option}>{option}</option>
                     ))}
                   </select>
+                  <div className="valid-feedback">Looks Good</div>
                </div>
                
                <div className="form-group col-md-2 mt-4">

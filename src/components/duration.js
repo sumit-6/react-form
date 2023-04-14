@@ -34,6 +34,7 @@ function Duration(props) {
                 value={props.duration.start}
                 required
               />
+              <div className="valid-feedback">Looks Good</div>
             </div>
                
                <div className="form-group col-md-4">
@@ -49,6 +50,7 @@ function Duration(props) {
                 value={props.duration.end}
                 required
               />
+              <div className="valid-feedback">Looks Good</div>
                </div>
 
                </div>

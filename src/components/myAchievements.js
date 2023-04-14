@@ -33,8 +33,9 @@ function MyAchievements(props) {
               return(
               <div className="row">
                  <div className="form-group col-md-4">
-                 <label for={`myAchievements_${i}`} className="form-label">Achievement: </label>
+                 <label htmlFor={`myAchievements_${i}`} className="form-label">Achievement: </label>
                   <textarea type="text" id={`myAchievements_${i}`} name="myAchievements" className="form-control"  placeholder="Enter Achievement" onChange={ e=>handleinputchange(e,i)} rows="4" cols="40" value={x} required/>
+                  <div className="valid-feedback">Looks Good</div>
                </div>
                
                <div className="form-group col-md-2 mt-4">

@@ -46,21 +46,24 @@ function MyProjects(props) {
               <div className="row">
                 
                  <div className="form-group col-md-4">
-                 <label for={`projectName_${i}`} className="form-label">Project Name: </label>
+                 <label htmlFor={`projectName_${i}`} className="form-label">Project Name: </label>
                   <input type="text" id={`projectName_${i}`} name="projectName" className="form-control"  placeholder="Enter Project Name" onChange={ e=>handleinputchange(e,i)} value={x.projectName} required />
+                  <div className="valid-feedback">Looks Good</div>
                </div>
                
                
                  <div className="form-group col-md-4">
-                 <label for={`githubLink_${i}`} className="form-label">Github Link: </label>
+                 <label htmlFor={`githubLink_${i}`} className="form-label">Github Link: </label>
                   <input type="text" id={`githubLink_${i}`} name="gitHubLink" className="form-control"  placeholder="Enter github link" onChange={ e=>handleinputchange(e,i)} value={x.gitHubLink} />
+                  <div className="valid-feedback">Looks Good</div>
                </div>
 
                <ProjectDescription index={i} description={x.description} onChange={handleProjectDescriptionChange} onRemove={handleProjectDescriptionDelete} data={x.description} />
                 
                  <div className="form-group col-md-4">
-                 <label for={`projectLink_${i}`} className="form-label">Project Link: </label>
+                 <label htmlFor={`projectLink_${i}`} className="form-label">Project Link: </label>
                   <input type="text" id={`projectLink_${i}`} name="projectLink" className="form-control"  placeholder="Enter project url" onChange={ e=>handleinputchange(e,i)} value={x.projectLink} />
+                  <div className="valid-feedback">Looks Good</div>
                </div>
 
                <div className="form-group col-md-2 mt-4">

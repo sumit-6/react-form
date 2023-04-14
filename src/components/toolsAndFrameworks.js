@@ -35,8 +35,9 @@ function ToolsAndFrameworks(props) {
               return(
               <div className="row mb-3">
                  <div className="form-group col-md-4">
-                 <label for={`toolName_${i}`} className="form-label">Tool Name: </label>
+                 <label htmlFor={`toolName_${i}`} className="form-label">Tool Name: </label>
                   <input type="text" id={`toolName_${i}`} name="toolName" className="form-control"  placeholder="Enter Tool Name" onChange={ e=>handleinputchange(e,i)} value={x.toolName} required />
+                  <div className="valid-feedback">Looks Good</div>
                </div>
 
                <div className="form-group col-md-4">
@@ -47,6 +48,7 @@ function ToolsAndFrameworks(props) {
                       <option key={option} value={option}>{option}</option>
                     ))}
                   </select>
+                  <div className="valid-feedback">Looks Good</div>
                </div>
                
                <div className="form-group col-md-2 mt-4">

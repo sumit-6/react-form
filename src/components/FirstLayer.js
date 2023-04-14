@@ -27,18 +27,21 @@ function FirstLayer(props) {
        <div className="col-sm-12">
               <div className="row">
                  <div className="form-group col-md-4">
-                 <label for="name" className="form-label">Name: </label>
-                  <input type="text" id="name" name="name" className="form-control"  placeholder="Enter Name" onChange={(e)=> handleinputchange(e)} value={inputObj.name} required/>
+                 <label htmlFor="name" className="form-label">Name: </label>
+                 <input type="text" id="name" name="name" className="form-control"  placeholder="Enter Name" onChange={(e)=> handleinputchange(e)} value={inputObj.name} required/>
+                 <div className="valid-feedback">Looks Good</div>
                </div>
                
                <div className="form-group col-md-4">
-                <label for="description" className="form-label">Description: </label>
+                <label htmlFor="description" className="form-label">Description: </label>
                 <textarea type="text" id="description" name="description" className="form-control" placeholder="Enter Description" onChange={(e)=> handleinputchange(e)} rows="4" cols="40" value={inputObj.description} required />
+                <div className="valid-feedback">Looks Good</div>
                </div>
 
                {(inputObj.profilePicture.url == null) && <div className="form-group col-md-4">
-                <label for="profilePicture" className="form-label">Profile Picture: </label>
+                <label htmlFor="profilePicture" className="form-label">Profile Picture: </label>
                 <input type="file" id="profilePicture" name="profilePicture" className="form-control" placeholder="Enter profile picture" onChange={(e) => handleFileChange(e)} required />
+                <div className="valid-feedback">Looks Good</div>
                </div>}
 
                {(inputObj.profilePicture.url) && <div className="form-group col-md-4">
@@ -49,23 +52,27 @@ function FirstLayer(props) {
                </div> }
                
                <div className="form-group col-md-4">
-                <label for="linkedIn" className="form-label">LinkedIn: </label>
+                <label htmlFor="linkedIn" className="form-label">LinkedIn: </label>
                 <input type="text" id="linkedIn" name="linkedIn" className="form-control" placeholder="Enter linkedIn profile url" onChange={(e)=> handleinputchange(e)} value={inputObj.linkedIn} required />
+                <div className="valid-feedback">Looks Good</div>
                </div>
 
                <div className="form-group col-md-4">
-                <label for="instagram" className="form-label">Instagram: </label>
+                <label htmlFor="instagram" className="form-label">Instagram: </label>
                 <input type="text" id="instagram" name="instagram" className="form-control" placeholder="Enter instagram profile url" onChange={(e)=> handleinputchange(e)} value={inputObj.instagram} required />
+                <div className="valid-feedback">Looks Good</div>
                </div>
 
                <div className="form-group col-md-4">
-                <label for="telephone" className="form-label">Mobile Number: </label>
+                <label htmlFor="telephone" className="form-label">Mobile Number: </label>
                 <input type="number" id="telephone" name="telephone" className="form-control" placeholder="Enter mobile number" onChange={(e)=> handleinputchange(e)} value={inputObj.telephone} required/>
+                <div className="valid-feedback">Looks Good</div>
                </div>
 
                <div className="form-group col-md-4">
-                <label for="email" className="form-label">Email: </label>
+                <label htmlFor="email" className="form-label">Email: </label>
                 <input type="email" id="email" name="email" className="form-control" placeholder="Enter email" onChange={(e)=> handleinputchange(e)} value={inputObj.email} required/>
+                <div className="valid-feedback">Looks Good</div>
                </div>
 
                <MainDesignation mainDesignations={props.mainDesignations} />
