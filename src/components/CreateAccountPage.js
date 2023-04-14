@@ -45,7 +45,7 @@ const CreateAccountPage = () => {
                 onChange={e => setEmail(e.target.value)}
                 >
             </input>
-            <small id="emailHelp" className="form-text text-muted">This email address needs not to be your </small>
+            <small id="emailHelp" className="form-text text-muted">This email address needs not to be your actual email address</small>
             </div>
             <div className="form-group">
             <label htmlFor="exampleInputPassword1" className="form-label">Password:</label>
