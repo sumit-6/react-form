@@ -84,7 +84,7 @@ function EditReactForm(props) {
         }
       }
     
-      const response = await axios.post(`http://localhost:8000/portfolio/delete/${props.id}`, config);
+      const response = await axios.post(`http://localhost:8000/portfolio/delete/${props.id}`, {}, config);
       if(response.data === "Success") {
         window.location.href = `https://react-form-ten-steel.vercel.app/`;
       } else {
