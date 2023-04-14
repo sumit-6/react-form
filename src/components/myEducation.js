@@ -36,7 +36,7 @@ function MyEducation(props) {
               <div className="row">
                 <div className="form-group col-md-4">
                  <label htmlFor={`institutionName_${i}`} className="form-label">Institution Name: </label>
-                  <input type="text" id={`institutionName_${i}`} name="institutionName" className="form-control"  placeholder="Enter Institution" onChange={ e=>handleinputchange(e,i)} value={x.institutionName} required/>
+                  <input type="text" id={`institutionName_${i}`} name="institutionName" className="form-control"  placeholder="Enter your institution name" onChange={ e=>handleinputchange(e,i)} value={x.institutionName} required/>
                   <div className="valid-feedback">Looks Good</div>
                </div>
                
@@ -50,21 +50,21 @@ function MyEducation(props) {
        
                  <div className="form-group col-md-4">
                  <label htmlFor={`place_${i}`} className="form-label">Place: </label>
-                  <input type="text" id={`place_${i}`} name="place" className="form-control"  placeholder="Enter place" onChange={ e=>handleinputchange(e,i)} value={x.place} required/>
+                  <input type="text" id={`place_${i}`} name="place" className="form-control"  placeholder="Enter place (like... Delhi, India)" onChange={ e=>handleinputchange(e,i)} value={x.place} required/>
                   <div className="valid-feedback">Looks Good</div>
                </div>
 
                
                  <div className="form-group col-md-4">
                  <label htmlFor={`aggregate_${i}`} className="form-label">Aggregate: </label>
-                  <input type="number" id={`aggregate_${i}`} step="0.01"  name="aggregate" className="form-control"  placeholder="Enter aggregate" onChange={ e=>handleinputchange(e,i)} value={x.aggregate} required/>
+                  <input type="number" id={`aggregate_${i}`} step="0.01"  name="aggregate" className="form-control"  placeholder="if GPA enter X.XX and if Percentage enter XX.X" onChange={ e=>handleinputchange(e,i)} value={x.aggregate} required/>
                   <div className="valid-feedback">Looks Good</div>
                </div>
 
                
                  <div className="form-group col-md-4">
-                 <label htmlFor={`coursePursuied_${i}`} className="form-label">Course Pursuied: </label>
-                  <input type="text" id={`coursePursuied_${i}`} name="coursePursuied" className="form-control"  placeholder="Enter courage pursuied" onChange={ e=>handleinputchange(e,i)} value={x.coursePursuied} required />
+                 <label htmlFor={`coursePursuied_${i}`} className="form-label">Course Pursued: </label>
+                  <input type="text" id={`coursePursuied_${i}`} name="coursePursuied" className="form-control"  placeholder="12th/B.Tech IT/M.Tech ME/..." onChange={ e=>handleinputchange(e,i)} value={x.coursePursuied} required />
                   <div className="valid-feedback">Looks Good</div>
                </div>
 
@@ -74,7 +74,7 @@ function MyEducation(props) {
                   <button  className="btn btn-danger mx-1" onClick={(e)=> handleremove(e, i)}>Remove</button>
                }
                { inputList.length-1===i &&
-               <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More</button>
+               <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More Education</button>
                }
                
                </div>

@@ -4,6 +4,8 @@ import MainDesignation from "./mainDesignation";
 import { useLocation } from "react-router-dom";
 
 function FirstLayer(props) {
+    const experienceLevelOptions = ['Fresher', '6+ Months', '1-2 Years', '3-5 Years', '5-10 Years', '10+ Years'];
+    const projectNumberOptions = ['Beginner', '1-2 Projects', '3-5 Projects', '5-10 Projects', '10+ Projects'];
     const location = useLocation().pathname + "/profilePicture";
     
     const [inputObj, setinputObj]= useState({name:props.name, description:props.description, profilePicture: props.profilePicture, linkedIn: props.linkedIn, instagram: props.instagram, telephone: props.telephone, email: props.email});
@@ -28,13 +30,20 @@ function FirstLayer(props) {
               <div className="row">
                  <div className="form-group col-md-4">
                  <label htmlFor="name" className="form-label">Name: </label>
-                 <input type="text" id="name" name="name" className="form-control"  placeholder="Enter Name" onChange={(e)=> handleinputchange(e)} value={inputObj.name} required/>
+                 <input type="text" id="name" name="name" className="form-control"  placeholder="Enter name" onChange={(e)=> handleinputchange(e)} value={inputObj.name} required/>
                  <div className="valid-feedback">Looks Good</div>
+               </div>
+
+               <div className="form-group col-md-4">
+                <label htmlFor="bio" className="form-label">Bio: </label>
+                <textarea type="text" id="bio" name="bio" className="form-control" placeholder="Enter a brief description of yours, your hobby, your birthdate, and likings..." onChange={(e)=> handleinputchange(e)} rows="4" cols="40" value={inputObj.description} required />
+                <div className="valid-feedback">Looks Good</div>
                </div>
                
                <div className="form-group col-md-4">
                 <label htmlFor="description" className="form-label">Description: </label>
-                <textarea type="text" id="description" name="description" className="form-control" placeholder="Enter Description" onChange={(e)=> handleinputchange(e)} rows="4" cols="40" value={inputObj.description} required />
+                <textarea type="text" id="description" name="description" className="form-control" placeholder="Enter your description of your projessional life...
+For Example: 'I am a Full Stack Developer and I can create web pages with UI/UX interfaces. Apart from that I love doing DSA and problem-solving.'" onChange={(e)=> handleinputchange(e)} rows="4" cols="40" value={inputObj.description} required />
                 <div className="valid-feedback">Looks Good</div>
                </div>
 
@@ -65,17 +74,39 @@ function FirstLayer(props) {
 
                <div className="form-group col-md-4">
                 <label htmlFor="telephone" className="form-label">Mobile Number: </label>
-                <input type="number" id="telephone" name="telephone" className="form-control" placeholder="Enter mobile number" onChange={(e)=> handleinputchange(e)} value={inputObj.telephone} required/>
+                <input type="number" id="telephone" name="telephone" className="form-control" placeholder="Enter mobile number (whatsapp number)" onChange={(e)=> handleinputchange(e)} value={inputObj.telephone} required/>
                 <div className="valid-feedback">Looks Good</div>
                </div>
 
                <div className="form-group col-md-4">
                 <label htmlFor="email" className="form-label">Email: </label>
-                <input type="email" id="email" name="email" className="form-control" placeholder="Enter email" onChange={(e)=> handleinputchange(e)} value={inputObj.email} required/>
+                <input type="email" id="email" name="email" className="form-control" placeholder="Enter email address" onChange={(e)=> handleinputchange(e)} value={inputObj.email} required/>
                 <div className="valid-feedback">Looks Good</div>
                </div>
 
                <MainDesignation mainDesignations={props.mainDesignations} />
+               <div className="form-group col-md-4">
+               <label htmlFor={`yearsOfExperience`} className="form-label">Work Experience: </label>
+                  <select id={`yearsOfExperience`} name="yearsOfExperience" className="form-control" onChange={ e=>handleinputchange(e)} value={inputObj.yearsOfExperience} required >
+                    <option value="">Work Experience Options</option>
+                    {experienceLevelOptions.map(option => (
+                      <option key={option} value={option}>{option}</option>
+                    ))}
+                  </select>
+                  <div className="valid-feedback">Looks Good</div>
+               </div>
+
+               <div className="form-group col-md-4">
+               <label htmlFor={`numberOfProjects`} className="form-label">Project Experience: </label>
+                  <select id={`numberOfProjects`} name="numberOfProjects" className="form-control" onChange={ e=>handleinputchange(e)} value={inputObj.numberOfProjects} required >
+                    <option value="">Project Experience Options</option>
+                    {projectNumberOptions.map(option => (
+                      <option key={option} value={option}>{option}</option>
+                    ))}
+                  </select>
+                  <div className="valid-feedback">Looks Good</div>
+               </div>
+
                </div>
             </div>
 

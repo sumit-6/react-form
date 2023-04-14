@@ -84,11 +84,11 @@ function EditReactForm(props) {
         }
       }
     
-      const response = await axios.post(`http://localhost:8000/portfolio/delete/${props.id}`, {}, config);
+      const response = await axios.post(`https://source-folio-backend.onrender.com/portfolio/delete/${props.id}`, {}, config);
       if(response.data === "Success") {
         window.location.href = `https://react-form-ten-steel.vercel.app/`;
       } else {
-        window.location.href = 'http://localhost:3000/';
+        window.location.href = 'https://source-folio-frontend.vercel.app/';
       }
     }
     

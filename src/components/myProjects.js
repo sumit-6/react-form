@@ -47,7 +47,7 @@ function MyProjects(props) {
                 
                  <div className="form-group col-md-4">
                  <label htmlFor={`projectName_${i}`} className="form-label">Project Name: </label>
-                  <input type="text" id={`projectName_${i}`} name="projectName" className="form-control"  placeholder="Enter Project Name" onChange={ e=>handleinputchange(e,i)} value={x.projectName} required />
+                  <input type="text" id={`projectName_${i}`} name="projectName" className="form-control"  placeholder="Enter project name" onChange={ e=>handleinputchange(e,i)} value={x.projectName} required />
                   <div className="valid-feedback">Looks Good</div>
                </div>
                
@@ -72,7 +72,7 @@ function MyProjects(props) {
                   <button  className="btn btn-danger mx-1" onClick={(e)=> handleremove(e, i)}>Remove</button>
                }
                { inputList.length-1===i &&
-               <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More</button>
+               <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More Projects</button>
                }
                </div>
                {

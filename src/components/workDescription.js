@@ -42,7 +42,7 @@ function WorkDescription(props) {
                 
                  <div className="form-group col-md-4">
                  <label htmlFor={`workDescription_${props.index}_${i}`} className="form-label">Enter Description: </label>
-                  <textarea type="text" id={`workDescription_${props.index}_${i}`} name={"workDescription"+"_"+props.index} className="form-control"  placeholder="Enter Description" onChange={ e=>handleinputchange(e,i)} rows="4" cols="40" value={x} required></textarea>
+                  <textarea type="text" id={`workDescription_${props.index}_${i}`} name={"workDescription"+"_"+props.index} className="form-control"  placeholder="Enter description of what you did at this workplace..." onChange={ e=>handleinputchange(e,i)} rows="4" cols="40" value={x} required></textarea>
                   <div className="valid-feedback">Looks Good</div>
                </div>
                
@@ -54,7 +54,7 @@ function WorkDescription(props) {
                   }}>Remove</button>
                }
                { inputList.length-1===i &&
-               <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More</button>
+               <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More Description</button>
                }
                </div>
             </div>

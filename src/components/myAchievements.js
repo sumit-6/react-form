@@ -34,7 +34,7 @@ function MyAchievements(props) {
               <div className="row">
                  <div className="form-group col-md-4">
                  <label htmlFor={`myAchievements_${i}`} className="form-label">Achievement: </label>
-                  <textarea type="text" id={`myAchievements_${i}`} name="myAchievements" className="form-control"  placeholder="Enter Achievement" onChange={ e=>handleinputchange(e,i)} rows="4" cols="40" value={x} required/>
+                  <textarea type="text" id={`myAchievements_${i}`} name="myAchievements" className="form-control"  placeholder="Enter your achievement" onChange={ e=>handleinputchange(e,i)} rows="4" cols="40" value={x} required/>
                   <div className="valid-feedback">Looks Good</div>
                </div>
                
@@ -44,7 +44,7 @@ function MyAchievements(props) {
                   <button  className="btn btn-danger mx-1" onClick={(e)=> handleremove(e, i)}>Remove</button>
                }
                { inputList.length-1===i &&
-               <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More</button>
+               <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More Achievements</button>
                }
                </div>
                {

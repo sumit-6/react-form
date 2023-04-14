@@ -33,7 +33,7 @@ function MainDesignation(props) {
               <div className="row">
                  <div className="form-group col-md-4">
                   <label htmlFor="mainDesignation" className="form-label">Designation: </label>
-                  <input type="text" id="mainDesignation" name="mainDesignations" className="form-control"  placeholder="Enter First Name" onChange={ e=>handleinputchange(e,i)} value={inputList[i]} required />
+                  <input type="text" id="mainDesignation" name="mainDesignations" className="form-control"  placeholder="Full Stack Developer/Coder/App Developer/..." onChange={ e=>handleinputchange(e,i)} value={inputList[i]} required />
                   <div className="valid-feedback">Looks Good</div>
                </div>
                
@@ -43,7 +43,7 @@ function MainDesignation(props) {
                   <button className="btn btn-danger mx-1" onClick={(e)=> handleremove(e, i)}>Remove</button>
                }
                { inputList.length-1===i &&
-               <button className="btn btn-success m-1" onClick={ handleaddclick}>Add More</button>
+               <button className="btn btn-success m-1" onClick={ handleaddclick}>Add More Designations</button>
                }
                </div>
             </div>

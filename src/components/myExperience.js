@@ -56,14 +56,14 @@ function MyExperience(props) {
                 
                  <div className="form-group col-md-4">
                  <label htmlFor={`role_${i}`} className="form-label">Role: </label>
-                  <input type="text" id={`role_${i}`} name="role" className="form-control"  placeholder="Enter Role" onChange={ e=>handleinputchange(e,i)} value={inputList[i].role} required />
+                  <input type="text" id={`role_${i}`} name="role" className="form-control"  placeholder="Enter role" onChange={ e=>handleinputchange(e,i)} value={inputList[i].role} required />
                   <div className="valid-feedback">Looks Good</div>
                </div>
                
                
                  <div className="form-group col-md-4">
                  <label htmlFor={`company_${i}`} className="form-label">Company: </label>
-                  <input type="text" id={`company_${i}`} name="company" className="form-control"  placeholder="Enter Company Name" onChange={ e=>handleinputchange(e,i)} value={inputList[i].company} required />
+                  <input type="text" id={`company_${i}`} name="company" className="form-control"  placeholder="Enter company name" onChange={ e=>handleinputchange(e,i)} value={inputList[i].company} required />
                   <div className="valid-feedback">Looks Good</div>
                </div>
 
@@ -72,7 +72,7 @@ function MyExperience(props) {
                 
                  <div className="form-group col-md-4">
                  <label htmlFor={`certificate_${i}`} className="form-label">Certificate Url: </label>
-                  <input type="text" id={`certificate_${i}`}  name="certificate" className="form-control"  placeholder="Enter Certficate URL" onChange={ e=>handleinputchange(e,i)} value={inputList[i].certificate} />
+                  <input type="text" id={`certificate_${i}`}  name="certificate" className="form-control"  placeholder="Enter certficate url" onChange={ e=>handleinputchange(e,i)} value={inputList[i].certificate} />
                   <div className="valid-feedback">Looks Good</div>
                </div>
 
@@ -84,7 +84,7 @@ function MyExperience(props) {
                   <button  className="btn btn-danger mx-1" onClick={(e)=> handleremove(e, i)}>Remove</button>
                }
                { inputList.length-1===i &&
-               <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More</button>
+               <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More Experience</button>
                }
                </div>
                {

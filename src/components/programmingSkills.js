@@ -37,7 +37,7 @@ function ProgrammingSkills(props) {
                 
                  <div className="form-group col-md-4">
                  <label htmlFor={`skillName_${i}`} className="form-label">Skill Name: </label>
-                  <input type="text" id={`skillName_${i}`} name="skillName" className="form-control"  placeholder="Enter Skill Name" onChange={ e=>handleinputchange(e,i)} value={x.skillName} required />
+                  <input type="text" id={`skillName_${i}`} name="skillName" className="form-control"  placeholder="Enter skill name" onChange={ e=>handleinputchange(e,i)} value={x.skillName} required />
                   <div className="valid-feedback">Looks Good</div>
                </div>
 
@@ -58,7 +58,7 @@ function ProgrammingSkills(props) {
                   <button  className="btn btn-danger mx-1" onClick={(e)=> handleremove(e, i)}>Remove</button>
                }
                { inputList.length-1===i &&
-               <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More</button>
+               <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More Skills</button>
                }
                </div>
                {

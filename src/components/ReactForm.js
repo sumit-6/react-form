@@ -21,7 +21,7 @@ function ReactForm() {
   useEffect(() => {(async() => {
     console.log(user);
     const token = user && await user.getIdToken();
-    const response = await axios.get(`http://localhost:8000/api/getID/${user.uid}`, {headers: {authtoken: token}});
+    const response = await axios.get(`https://source-folio-backend.onrender.com/api/getID/${user.uid}`, {headers: {authtoken: token}});
     if(response.data !== 'Failure') {
       const dataRes = response.data;
       setId(dataRes);
@@ -49,16 +49,17 @@ function ReactForm() {
       enctype: 'multipart/form-data'
     }
   
-    const response = await axios.post('http://localhost:8000/portfolio/insert', formData, config);
+    const response = await axios.post('https://source-folio-backend.onrender.com/portfolio/insert', formData, config);
     if(response.data === "Success") {
-      window.location.href = 'http://localhost:3000/portfolio';
+      window.location.href = 'https://source-folio-frontend.vercel.app/portfolio';
     } else {
-      window.location.href = 'http://localhost:3000/';
+      window.location.href = 'https://source-folio-frontend.vercel.app/';
     }
   }
   return (
     <div className="App">
       <header className="App-header">
+        {(!isLoading && user) && <h1 style={{color: "black"}}><b><u>Source-Folio Form</u></b></h1>}
       {isLoading && <div>
           <h1 style={{color: "black"}}>Loading....</h1>
           </div>}

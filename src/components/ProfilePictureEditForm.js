@@ -23,11 +23,11 @@ function ProfilePictureEditForm(props) {
           enctype: 'multipart/form-data'
         }
       
-        const response = await axios.post(`http://localhost:8000/edit/profilePicture/${props.id}`, formData, config)
+        const response = await axios.post(`https://source-folio-backend.onrender.com/edit/profilePicture/${props.id}`, formData, config)
         if(response.data === "Success") {
             window.location.href = `https://react-form-ten-steel.vercel.app/edit/${props.id}`;
         } else {
-            window.location.href = "http://localhost:3000/";
+            window.location.href = "https://source-folio-frontend.vercel.app/";
         }
       }
 
