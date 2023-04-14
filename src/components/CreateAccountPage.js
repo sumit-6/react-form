@@ -28,7 +28,7 @@ const CreateAccountPage = () => {
 
     return (
         <>
-            <div className="card my-5 shadow" style={{borderRadius: "15px", marginLeft: "10rem", marginRight: "10rem"}}>
+            <div className="card my-5 shadow" style={{borderRadius: "15px", marginLeft: "2rem", marginRight: "2rem"}}>
             <div className="container py-4">
             <div className="text-center">
             <h1><b><u>CREATE ACCOUNT</u></b></h1>
