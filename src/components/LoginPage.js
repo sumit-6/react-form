@@ -31,7 +31,7 @@ const LoginPage = () => {
       >
         <div className="container py-4">
           <div className="text-center">
-            <h1>
+            <h1 className="heading">
               <b>
                 <u>WELCOME</u>
               </b>
@@ -65,7 +65,10 @@ const LoginPage = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-              <button onClick={(e) => logIn(e)} className="btn btn-primary">
+              <button
+                onClick={(e) => logIn(e)}
+                className="btn btn-primary submitbutton"
+              >
                 Log In
               </button>
             </form>

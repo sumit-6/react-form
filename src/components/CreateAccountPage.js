@@ -37,7 +37,7 @@ const CreateAccountPage = () => {
       >
         <div className="container py-4">
           <div className="text-center">
-            <h1>
+            <h1 className="heading">
               <b>
                 <u>CREATE ACCOUNT</u>
               </b>
@@ -89,7 +89,7 @@ const CreateAccountPage = () => {
               </div>
               <button
                 onClick={(e) => createAccount(e)}
-                className="btn btn-primary"
+                className="btn btn-primary submitbutton"
               >
                 Register
               </button>
