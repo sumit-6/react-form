@@ -37,7 +37,7 @@ const CreateAccountPage = () => {
       >
         <div className="container py-4">
           <div className="text-center">
-            <h1 className="heading">
+            <h1 className="heading1">
               <b>
                 <u>CREATE ACCOUNT</u>
               </b>
@@ -61,7 +61,7 @@ const CreateAccountPage = () => {
                   This email address needs not to be your actual email address
                 </small>
               </div>
-              <div className="form-group">
+              <div className="form-group loginsign">
                 <label htmlFor="exampleInputPassword1" className="form-label">
                   Password:
                 </label>
@@ -74,7 +74,7 @@ const CreateAccountPage = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-              <div className="form-group">
+              <div className="form-group loginsign">
                 <label htmlFor="exampleInputPassword2" className="form-label">
                   Repeat Your Password:
                 </label>
