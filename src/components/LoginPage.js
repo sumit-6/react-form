@@ -25,8 +25,8 @@ const LoginPage = () => {
         className="card my-5 shadow"
         style={{
           borderRadius: "15px",
-          marginLeft: "20rem",
-          marginRight: "20rem",
+          marginLeft: "2rem",
+          marginRight: "2rem",
         }}
       >
         <div className="container py-4">
