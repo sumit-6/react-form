@@ -8,7 +8,7 @@ function FirstLayer(props) {
     const projectNumberOptions = ['Beginner', '1-2 Projects', '3-5 Projects', '5-10 Projects', '10+ Projects'];
     const location = useLocation().pathname + "/profilePicture";
     
-    const [inputObj, setinputObj]= useState({name:props.name, description:props.description, profilePicture: props.profilePicture, linkedIn: props.linkedIn, instagram: props.instagram, telephone: props.telephone, email: props.email});
+    const [inputObj, setinputObj]= useState({name:props.name, description:props.description, profilePicture: props.profilePicture, linkedIn: props.linkedIn, instagram: props.instagram, telephone: props.telephone, email: props.email, bio: props.bio, yearsOfExperience: props.yearsOfExperience, numberOfProjects: props.numberOfProjects });
     function getThumbnail(url) {
       return url.replace('/upload', '/upload/w_200')
   }
