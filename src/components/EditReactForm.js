@@ -32,7 +32,7 @@ function EditReactForm(props) {
         //console.log('hello');
             console.log(user);
             const token = user && await user.getIdToken();
-            const response = await axios.get(`http://localhost:8000/api/portfolio/${props.id}`, {headers: {authtoken: token}});
+            const response = await axios.get(`https://source-folio-backend.onrender.com/api/portfolio/${props.id}`, {headers: {authtoken: token}});
             if(typeof(response.data) === 'object') {
               const dataRes = response.data;
               setData(dataRes);
@@ -64,11 +64,11 @@ function EditReactForm(props) {
           }
         }
     
-        const response = await axios.post(`http://localhost:8000/portfolio/edit/${props.id}`, formData, config)
+        const response = await axios.post(`https://source-folio-backend.onrender.com/portfolio/edit/${props.id}`, formData, config)
         if(response.data === "Success") {
-          window.location.href = `http://localhost:3000/portfolio`;
+          window.location.href = `https://source-folio-frontend.vercel.app/portfolio`;
         } else {
-          window.location.href = `http://localhost:3000/`;
+          window.location.href = `https://source-folio-frontend.vercel.app/`;
         }
       }
       catch(err) {
