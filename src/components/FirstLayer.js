@@ -8,7 +8,7 @@ function FirstLayer(props) {
     const projectNumberOptions = ['Beginner', '1-2 Projects', '3-5 Projects', '5-10 Projects', '10+ Projects'];
     const location = useLocation().pathname + "/profilePicture";
     
-    const [inputObj, setinputObj]= useState({name:props.name, description:props.description, profilePicture: props.profilePicture, linkedIn: props.linkedIn, instagram: props.instagram, telephone: props.telephone, email: props.email, bio: props.bio, yearsOfExperience: props.yearsOfExperience, numberOfProjects: props.numberOfProjects });
+    const [inputObj, setinputObj]= useState({name:props.name, description:props.description, profilePicture: props.profilePicture, linkedIn: props.linkedIn, instagram: props.instagram, telephone: props.telephone, email: props.email, githubProfile: props.githubProfile, bio: props.bio, yearsOfExperience: props.yearsOfExperience, numberOfProjects: props.numberOfProjects });
     function getThumbnail(url) {
       return url.replace('/upload', '/upload/w_200')
   }
@@ -69,6 +69,12 @@ For Example: 'I am a Full Stack Developer and I can create web pages with UI/UX 
                <div className="form-group col-md-4">
                 <label htmlFor="instagram" className="form-label">Instagram: </label>
                 <input type="text" id="instagram" name="instagram" className="form-control" placeholder="Enter instagram profile url" onChange={(e)=> handleinputchange(e)} value={inputObj.instagram} required />
+                <div className="valid-feedback">Looks Good</div>
+               </div>
+
+               <div className="form-group col-md-4">
+                <label htmlFor="githubProfile" className="form-label">Github: </label>
+                <input type="text" id="githubProfile" name="githubProfile" className="form-control" placeholder="Enter github profile url" onChange={(e)=> handleinputchange(e)} value={inputObj.githubProfile} required />
                 <div className="valid-feedback">Looks Good</div>
                </div>
 

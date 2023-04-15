@@ -15,7 +15,7 @@ import { signOut } from 'firebase/auth';
 
 function EditReactForm(props) {
 
-    const [isReady, setIsReady] = useState(false);
+  const [isReady, setIsReady] = useState(false);
   const [data, setData] = useState({});
   const {user, isLoading} = useUser();
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ function EditReactForm(props) {
 
   useEffect(() => {(async () => {
         //console.log('hello');
-            console.log(user);
+            //console.log(user);
             const token = user && await user.getIdToken();
             const response = await axios.get(`https://source-folio-backend.onrender.com/api/portfolio/${props.id}`, {headers: {authtoken: token}});
             if(typeof(response.data) === 'object') {
@@ -99,7 +99,7 @@ function EditReactForm(props) {
           <h1 style={{color: "black"}}>Loading....</h1>
           </div>}
         {(isReady && user && user.uid === data.user_id) && <form enctype="application/json" novalidate className="validated-form">
-          <FirstLayer name={data.name} description={data.description} bio={data.bio} yearsOfExperience={data.yearsOfExperience} numberOfProjects={data.numberOfProjects} profilePicture={data.profilePicture} linkedIn={data.linkedIn} instagram={data.instagram} telephone={data.telephone} email={data.email} mainDesignations={data.mainDesignations}/>
+          <FirstLayer name={data.name} description={data.description} bio={data.bio} yearsOfExperience={data.yearsOfExperience} numberOfProjects={data.numberOfProjects} profilePicture={data.profilePicture} githubProfile={data.githubProfile} linkedIn={data.linkedIn} instagram={data.instagram} telephone={data.telephone} email={data.email} mainDesignations={data.mainDesignations}/>
           <br></br>
           
           <MyEducation data={data.myEducation}/>
