@@ -36,16 +36,62 @@
     transform: rotate(360deg);
   }
 }
-
-.form-group {
+/* changes made by deepak */
+/* .form-group {
   padding-left: 20%;
   padding-right: 20%;
   margin-top: 20px;
   margin-bottom: 20px;
-}
+} */
 
 .row,
 .box {
   background-color: #333945;
   border-radius: 0.35rem;
+}
+
+@media (min-width: 1024px) {
+  /* changes done by deepak*/
+  .form-group {
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  /* .text-center {
+    margin-left: 20rem;
+    margin-right: 20rem;
+  } */
+  /* .card {
+    margin-left: 20rem;
+    margin-right: 20rem;
+  } */
+  #root {
+    margin-left: 15rem;
+    margin-right: 15rem;
+  }
+}
+
+@media (max-width: 842px) {
+  /* changes done by deepak */
+
+  .heading {
+    font-size: 40px;
+  }
+  /* .form-group {
+    margin-bottom: 20px;
+  } */
+  .submitbutton {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .heading {
+    font-size: 40px;
+  }
+  /* .container {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  } */
 }
