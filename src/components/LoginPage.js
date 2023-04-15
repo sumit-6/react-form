@@ -31,14 +31,14 @@ const LoginPage = () => {
       >
         <div className="container py-4">
           <div className="text-center">
-            <h1 className="heading">
+            <h1 className="heading1">
               <b>
                 <u>WELCOME</u>
               </b>
             </h1>
             {error && <p className="error">{error}</p>}
             <form>
-              <div className="form-group">
+              <div className="form-group loginsign">
                 <label htmlFor="exampleInputEmail1" className="form-label">
                   Email address:
                 </label>
@@ -52,7 +52,7 @@ const LoginPage = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 ></input>
               </div>
-              <div className="form-group">
+              <div className="form-group loginsign">
                 <label htmlFor="exampleInputPassword1" className="form-label">
                   Your Password:
                 </label>

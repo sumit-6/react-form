@@ -36,13 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
 /* changes made by deepak */
-/* .form-group {
+.form-group {
   padding-left: 20%;
   padding-right: 20%;
   margin-top: 20px;
   margin-bottom: 20px;
-} */
+}
 
 .row,
 .box {
@@ -52,7 +53,7 @@
 
 @media (min-width: 1024px) {
   /* changes done by deepak*/
-  .form-group {
+  .loginsign {
     padding-left: 20%;
     padding-right: 20%;
     margin-top: 20px;
@@ -75,7 +76,7 @@
 @media (max-width: 842px) {
   /* changes done by deepak */
 
-  .heading {
+  .heading1 {
     font-size: 40px;
   }
   /* .form-group {
@@ -87,7 +88,7 @@
 }
 
 @media (max-width: 560px) {
-  .heading {
+  .heading1 {
     font-size: 40px;
   }
   /* .container {
