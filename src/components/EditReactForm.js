@@ -120,12 +120,6 @@ function EditReactForm(props) {
           </div>}
           {(!isLoading && !user) && <div>
           <h1 style={{color: "black"}}>You are not logged In</h1>
-          <button onClick={() => navigate('login')} className="btn btn-warning btn-lg m-3">
-              Log In
-            </button>
-            <button onClick={() => navigate("create-account")} className="btn btn-warning btn-lg m-3">
-              Sign Up
-            </button>
           </div>}
         <br></br>
       </header>
