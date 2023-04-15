@@ -37,13 +37,15 @@
   }
 }
 
-.form-group{
-  padding: 1rem;
+.form-group {
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-
-
-.row, .box{
+.row,
+.box {
   background-color: #333945;
   border-radius: 0.35rem;
 }
