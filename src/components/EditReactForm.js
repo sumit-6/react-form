@@ -99,7 +99,7 @@ function EditReactForm(props) {
           <h1 style={{color: "black"}}>Loading....</h1>
           </div>}
         {(isReady && user && user.uid === data.user_id) && <form enctype="application/json" novalidate className="validated-form">
-          <FirstLayer name={data.name} description={data.description} profilePicture={data.profilePicture} linkedIn={data.linkedIn} instagram={data.instagram} telephone={data.telephone} email={data.email} mainDesignations={data.mainDesignations}/>
+          <FirstLayer name={data.name} description={data.description} bio={data.bio} yearsOfExperience={data.yearsOfExperience} numberOfProjects={data.numberOfProjects} profilePicture={data.profilePicture} linkedIn={data.linkedIn} instagram={data.instagram} telephone={data.telephone} email={data.email} mainDesignations={data.mainDesignations}/>
           <br></br>
           
           <MyEducation data={data.myEducation}/>

@@ -36,7 +36,7 @@ function FirstLayer(props) {
 
                <div className="form-group col-md-4">
                 <label htmlFor="bio" className="form-label">Bio: </label>
-                <textarea type="text" id="bio" name="bio" className="form-control" placeholder="Enter a brief description of yours, your hobby, your birthdate, and likings..." onChange={(e)=> handleinputchange(e)} rows="4" cols="40" value={inputObj.description} required />
+                <textarea type="text" id="bio" name="bio" className="form-control" placeholder="Enter a brief description of yours, your hobby, your birthdate, and likings..." onChange={(e)=> handleinputchange(e)} rows="4" cols="40" value={inputObj.bio} required />
                 <div className="valid-feedback">Looks Good</div>
                </div>
                

@@ -64,7 +64,7 @@ function ReactForm() {
           <h1 style={{color: "black"}}>Loading....</h1>
           </div>}
         {(!isLoading && user) && <form encType='multipart/form-data' novalidate className="validated-form">
-          <FirstLayer name='' telephone='' description='' instagram='' linkedIn='' email='' profilePicture={{url: null, filename: null}} mainDesignations={['']} />
+          <FirstLayer name='' telephone='' description='' bio='' yearsOfExperience='' numberOfProjects='' instagram='' linkedIn='' email='' profilePicture={{url: null, filename: null}} mainDesignations={['']} />
           <br></br>
           <MyEducation data={[{institutionName: "", place: "", year: "", aggregate: "", coursePursuied: ""}]}/>
           <br></br>
