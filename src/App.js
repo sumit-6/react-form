@@ -12,15 +12,7 @@ function App() {
   const ID = location.pathname.split("/")[2];
   return (
     <Routes>
-      <Route path="/" element={<ReactForm />} />
       <Route path="/form" element={<Form />} />
-      <Route path="/edit/:id" element={<EditReactForm id={ID} />} />
-      <Route
-        path="/edit/:id/profilePicture"
-        element={<ProfilePictureEditForm id={ID} />}
-      />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/create-account" element={<CreateAccountPage />} />
       <Route path="/about-us" element={<AboutUs />} />
     </Routes>
   );
@@ -28,7 +20,6 @@ function App() {
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
-  "use strict";
   bsCustomFileInput.init();
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
   const forms = document.querySelectorAll(".validated-form");

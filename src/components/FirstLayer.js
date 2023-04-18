@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 function FirstLayer(props) {
     const experienceLevelOptions = ['Fresher', '6+ Months', '1-2 Years', '3-5 Years', '5-10 Years', '10+ Years'];
     const projectNumberOptions = ['Beginner', '1-2 Projects', '3-5 Projects', '5-10 Projects', '10+ Projects'];
-    const location = useLocation().pathname + "/profilePicture";
+
     
     const [inputObj, setinputObj]= useState({name:props.name, description:props.description, profilePicture: props.profilePicture, linkedIn: props.linkedIn, instagram: props.instagram, telephone: props.telephone, email: props.email, githubProfile: props.githubProfile, bio: props.bio, yearsOfExperience: props.yearsOfExperience, numberOfProjects: props.numberOfProjects });
     function getThumbnail(url) {
@@ -22,6 +22,11 @@ function FirstLayer(props) {
       const file = e.target.files[0];
       
       setinputObj({...inputObj, profilePicture: file})
+    }
+
+    const handleEditPicture=(e) => {
+      e.preventDefault();
+      window.location.href=`https://react-form-ten-steel.vercel.app/form?q=${props.token}&sfid=${props.id}&where=profilePicture`;
     }
   return (
     <Container className="content m-3">
@@ -57,7 +62,7 @@ For Example: 'I am a Full Stack Developer and I can create web pages with UI/UX 
                 <label>Profile Picture: </label>
                 <img src={getThumbnail(inputObj.profilePicture.url)} className="image-thumbnail" alt={inputObj.profilePicture.filename}></img>
                 <div>
-                <a href={`${location}`}>Edit Profile Picture</a></div>
+                <button onCLick={handleEditPicture}>Edit Profile Picture</button></div>
                </div> }
                
                <div className="form-group col-md-4">

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import EditReactForm from "./EditReactForm";
 import ReactForm from "./ReactForm";
+import ProfilePictureEditForm from "./ProfilePictureEditForm";
 
 function Form() {
 
@@ -19,7 +20,8 @@ function Form() {
     }, []);
     return (
         <>
-        {whereTo === 'edit' ? <EditReactForm id={id} token={token} /> : <ReactForm token={token} id={id}/> }
+        {(whereTo === 'edit') && <EditReactForm id={id} token={token} /> }
+        {(whereTo === 'form') ? <ReactForm id={id} token={token} /> : <ProfilePictureEditForm id={id} token={token} />}
         </>
     );
     

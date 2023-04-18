@@ -84,7 +84,8 @@ function EditReactForm(props) {
       <header className="App-header">
       <h1 style={{color: 'black'}}><u><b>SourceFolio Form</b></u></h1>
         <form enctype="application/json" novalidate className="validated-form">
-          <FirstLayer name={data.name} description={data.description} bio={data.bio} yearsOfExperience={data.yearsOfExperience} numberOfProjects={data.numberOfProjects} profilePicture={data.profilePicture} githubProfile={data.githubProfile} linkedIn={data.linkedIn} instagram={data.instagram} telephone={data.telephone} email={data.email} mainDesignations={data.mainDesignations}/>
+          <FirstLayer name={data.name} description={data.description} bio={data.bio} yearsOfExperience={data.yearsOfExperience} numberOfProjects={data.numberOfProjects} profilePicture={data.profilePicture} githubProfile={data.githubProfile}
+           linkedIn={data.linkedIn} instagram={data.instagram} telephone={data.telephone} email={data.email} mainDesignations={data.mainDesignations} token={props.token} id={props.id}/>
           <br></br>
           
           <MyEducation data={data.myEducation}/>

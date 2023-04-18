@@ -1,10 +1,8 @@
 import React, {useState} from "react";
 import { Container } from "react-bootstrap";
-import useUser from "../hooks/useUser";
 import axios from "axios";
 
 function ProfilePictureEditForm(props) {
-    const {user, isLoading} = useUser();
     const handleSubmit = async (e) => {
         e.preventDefault();
         const form = document.querySelector('.validated-form');
@@ -17,7 +15,7 @@ function ProfilePictureEditForm(props) {
         console.log(formData);
         const config = {
           headers: {
-            'authtoken': await user.getIdToken(),
+            'authtoken': props.token,
             'Content-Type': 'multipart/form-data'
           },
           enctype: 'multipart/form-data'
@@ -25,7 +23,7 @@ function ProfilePictureEditForm(props) {
       
         const response = await axios.post(`https://source-folio-backend.onrender.com/edit/profilePicture/${props.id}`, formData, config)
         if(response.data === "Success") {
-            window.location.href = `https://react-form-ten-steel.vercel.app/edit/${props.id}`;
+            window.location.href = `https://react-form-ten-steel.vercel.app/form?q=${props.token}&sfid=${props.id}&where=edit`;
         } else {
             window.location.href = "https://source-folio-frontend.vercel.app/";
         }
