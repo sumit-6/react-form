@@ -51,48 +51,53 @@
   border-radius: 0.35rem;
 }
 
-@media (min-width: 1024px) {
-  /* changes done by deepak*/
-  .loginsign {
-    padding-left: 20%;
-    padding-right: 20%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  /* .text-center {
-    margin-left: 20rem;
-    margin-right: 20rem;
-  } */
-  /* .card {
-    margin-left: 20rem;
-    margin-right: 20rem;
-  } */
-  #root {
-    margin-left: 15rem;
-    margin-right: 15rem;
-  }
+.BODY {
+  margin: 0;
+  padding: 0;
+  background-color: #18162d;
 }
 
-@media (max-width: 842px) {
-  /* changes done by deepak */
-
-  .heading1 {
-    font-size: 40px;
-  }
-  /* .form-group {
-    margin-bottom: 20px;
-  } */
-  .submitbutton {
-    margin-top: 20px;
-  }
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-@media (max-width: 560px) {
-  .heading1 {
-    font-size: 40px;
+.loading-bar {
+  width: 50%;
+  height: 20px;
+  background-color: #ebebeb;
+  border-radius: 10px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.loading-bar::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: orange;
+  border-radius: 10px;
+  animation: progress 2s linear infinite;
+}
+
+.loading-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f7f7f7;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
   }
-  /* .container {
-    margin-left: 2rem;
-    margin-right: 2rem;
-  } */
+  100% {
+    width: 100%;
+  }
 }

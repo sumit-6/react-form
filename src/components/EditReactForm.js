@@ -8,30 +8,16 @@ import MyAchievements from './myAchievements';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import useUser from '../hooks/useUser';
-import { useNavigate } from 'react-router-dom';
-import { auth } from '../index';
-import { signOut } from 'firebase/auth';
 
 function EditReactForm(props) {
 
   const [isReady, setIsReady] = useState(false);
   const [data, setData] = useState({});
-  const {user, isLoading} = useUser();
-  const navigate = useNavigate();
-  const handleLogout = (e) => {
-    e.preventDefault();
-    signOut(auth).then(() => {
-      navigate('/');
-    }).catch((err) => {
-      console.log(err.message);
-    })
-  }
 
   useEffect(() => {(async () => {
         //console.log('hello');
             //console.log(user);
-            const token = user && await user.getIdToken();
+            const token = props.token;
             const response = await axios.get(`https://source-folio-backend.onrender.com/api/portfolio/${props.id}`, {headers: {authtoken: token}});
             if(typeof(response.data) === 'object') {
               const dataRes = response.data;
@@ -39,7 +25,7 @@ function EditReactForm(props) {
               setIsReady(true);
             }
         })();
-    }, [user]);
+    }, []);
    
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -60,7 +46,7 @@ function EditReactForm(props) {
         console.log(formData);
         const config = {
           headers: {
-            'authtoken': await user.getIdToken()
+            'authtoken': props.token
           }
         }
     
@@ -76,7 +62,7 @@ function EditReactForm(props) {
       }
     }
 
-    const handleDelete = async (e) => {
+    /*const handleDelete = async (e) => {
       e.preventDefault();
       const config = {
         headers: {
@@ -90,15 +76,14 @@ function EditReactForm(props) {
       } else {
         window.location.href = 'https://source-folio-frontend.vercel.app/';
       }
-    }
+    }*/
     
   return (
-    <div className="App">
+    <>
+    {isReady && <div className="App">
       <header className="App-header">
-        {isLoading && <div>
-          <h1 style={{color: "black"}}>Loading....</h1>
-          </div>}
-        {(isReady && user && user.uid === data.user_id) && <form enctype="application/json" novalidate className="validated-form">
+      <h1 style={{color: 'black'}}><u><b>SourceFolio Form</b></u></h1>
+        <form enctype="application/json" novalidate className="validated-form">
           <FirstLayer name={data.name} description={data.description} bio={data.bio} yearsOfExperience={data.yearsOfExperience} numberOfProjects={data.numberOfProjects} profilePicture={data.profilePicture} githubProfile={data.githubProfile} linkedIn={data.linkedIn} instagram={data.instagram} telephone={data.telephone} email={data.email} mainDesignations={data.mainDesignations}/>
           <br></br>
           
@@ -112,18 +97,16 @@ function EditReactForm(props) {
           <br></br>
           <MyAchievements data={data.myAchievements}/>
           <button onClick={handleSubmit} className="btn btn-warning btn-lg m-3">Submit</button>
-          <button onClick={e => handleLogout(e)} className="btn btn-warning btn-lg m-3">Logout</button>
-          <button onClick={e => handleDelete(e)} className="btn btn-danger btn-lg m-3">Delete</button>
-        </form>}
-        {(!isLoading && user && (user.uid !== data.user_id)) && <div>
-          <h1 style={{color: "black"}}>You can't perform this action</h1>
-          </div>}
-          {(!isLoading && !user) && <div>
-          <h1 style={{color: "black"}}>You are not logged In</h1>
-          </div>}
-        <br></br>
+        </form>
       </header>
+    </div>}
+    {!isReady && <div className="BODY">
+    <div className="loading">
+      <div className="loading-bar"></div>
+      <div className="loading-text">Loading...</div>
     </div>
+    </div>}
+    </>
   );
 }
 
