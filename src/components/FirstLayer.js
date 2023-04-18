@@ -62,7 +62,7 @@ For Example: 'I am a Full Stack Developer and I can create web pages with UI/UX 
                 <label>Profile Picture: </label>
                 <img src={getThumbnail(inputObj.profilePicture.url)} className="image-thumbnail" alt={inputObj.profilePicture.filename}></img>
                 <div>
-                <button onCLick={handleEditPicture}>Edit Profile Picture</button></div>
+                <a onCLick={handleEditPicture}>Edit Profile Picture</a></div>
                </div> }
                
                <div className="form-group col-md-4">
