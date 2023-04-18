@@ -22,7 +22,7 @@ function Form() {
         <>
         {(whereTo === 'edit') && <EditReactForm id={id} token={token} /> }
         {(whereTo === 'form') && <ReactForm id={id} token={token} />}
-        {(whereTo === 'profilePicture' && <ProfilePictureEditForm />)}
+        {(whereTo === 'profilePicture' && <ProfilePictureEditForm id={id} token={token}/>)}
         </>
     );
     
