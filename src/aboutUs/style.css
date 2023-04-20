@@ -1,9 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300&family=Poppins:wght@400;500;600&display=swap');
-
-* {
-    font-family: Nunito, sans-serif;
-    
-  }
   
 
   .about-section {
@@ -143,6 +138,36 @@
     justify-content: space-evenly;
   }
   
-  .us_p {
-    height: 250px;
+  
+
+  @media screen and (max-width : 2000px){
+    .us_p {
+      height: 250px;
+    }
+  }
+
+  @media screen and (max-width : 992px){
+    .us_p {
+      height: 250px;
+    }
+  }
+  
+  @media screen and (max-width : 768px) {
+    .us_p {
+      height: 250px;
+    }
+  }
+  
+  
+  
+  /*for small device */
+  @media screen and (max-width : 659px) {
+    .us_p {
+      height:fit-content;
+    }
+  }
+
+  .name {
+    font-size: 30px;
+    margin-top: 5px;
   }
