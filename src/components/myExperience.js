@@ -36,7 +36,7 @@ function MyExperience(props) {
   const handleDurationChange = (value, index) => {
     const list = [...inputList];
     list[index].duration = value;
-    console.log(index);
+   
     setinputList(list);
   };
 

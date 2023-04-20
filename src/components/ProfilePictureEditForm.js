@@ -6,13 +6,13 @@ function ProfilePictureEditForm(props) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const form = document.querySelector('.validated-form');
-        console.log(form);
+     
         const formData_empty = new FormData(form);
         const formData = {};
         for(const key of formData_empty.entries()) {
             formData[key[0]] = key[1];
         }
-        console.log(formData);
+     
         const config = {
           headers: {
             'authtoken': props.token,

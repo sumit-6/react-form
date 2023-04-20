@@ -15,8 +15,7 @@ function EditReactForm(props) {
   const [data, setData] = useState({});
 
   useEffect(() => {(async () => {
-        //console.log('hello');
-            //console.log(user);
+    
             const token = props.token;
             const response = await axios.get(`https://source-folio-backend.onrender.com/api/portfolio/${props.id}`, {headers: {authtoken: token}});
             if(typeof(response.data) === 'object') {
@@ -31,7 +30,7 @@ function EditReactForm(props) {
       e.preventDefault();
       try {
         const form = document.querySelector(".validated-form");
-        console.log(form);
+
         const formData_empty = new FormData(form);
         const formData = {};
         for (const key of formData_empty.entries()) {
@@ -43,7 +42,7 @@ function EditReactForm(props) {
               formData[key[0]].push(key[1]);
             }
         }
-        console.log(formData);
+
         const config = {
           headers: {
             'authtoken': props.token
