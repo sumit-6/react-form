@@ -50,19 +50,19 @@ function MyExperience(props) {
        <h2>Experience</h2>
            
             { 
-            inputList.map( (x,i)=>{
+              inputList.map( (x,i)=>{
               return(
               <div className="row">
                 
                  <div className="form-group col-md-4">
-                 <label htmlFor={`role_${i}`} className="form-label">Role: </label>
+                 <label htmlFor={`role_${i}`} className="form-label">Role*: </label>
                   <input type="text" id={`role_${i}`} name="role" className="form-control"  placeholder="Enter role" onChange={ e=>handleinputchange(e,i)} value={inputList[i].role} required />
                   <div className="valid-feedback">Looks Good</div>
                </div>
                
                
                  <div className="form-group col-md-4">
-                 <label htmlFor={`company_${i}`} className="form-label">Company: </label>
+                 <label htmlFor={`company_${i}`} className="form-label">Company*: </label>
                   <input type="text" id={`company_${i}`} name="company" className="form-control"  placeholder="Enter company name" onChange={ e=>handleinputchange(e,i)} value={inputList[i].company} required />
                   <div className="valid-feedback">Looks Good</div>
                </div>
@@ -94,7 +94,7 @@ function MyExperience(props) {
               );
             })}
 
-       {!inputList.length && <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More Experience</button>}
+       {!inputList.length && <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add Experience</button>}
        </div>
      </div>
     </Container>

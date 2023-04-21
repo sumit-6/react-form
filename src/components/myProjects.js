@@ -46,7 +46,7 @@ function MyProjects(props) {
               <div className="row">
                 
                  <div className="form-group col-md-4">
-                 <label htmlFor={`projectName_${i}`} className="form-label">Project Name: </label>
+                 <label htmlFor={`projectName_${i}`} className="form-label">Project Name*: </label>
                   <input type="text" id={`projectName_${i}`} name="projectName" className="form-control"  placeholder="Enter project name" onChange={ e=>handleinputchange(e,i)} value={x.projectName} required />
                   <div className="valid-feedback">Looks Good</div>
                </div>

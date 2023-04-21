@@ -34,26 +34,26 @@ function FirstLayer(props) {
        <div className="col-sm-12">
               <div className="row">
                  <div className="form-group col-md-4">
-                 <label htmlFor="name" className="form-label">Name: </label>
+                 <label htmlFor="name" className="form-label">Name*: </label>
                  <input type="text" id="name" name="name" className="form-control"  placeholder="Enter name" onChange={(e)=> handleinputchange(e)} value={inputObj.name} required/>
                  <div className="valid-feedback">Looks Good</div>
                </div>
 
                <div className="form-group col-md-4">
-                <label htmlFor="bio" className="form-label">Bio: </label>
+                <label htmlFor="bio" className="form-label">Bio*: </label>
                 <textarea type="text" id="bio" name="bio" className="form-control" placeholder="Enter a brief description of yours, your hobby, your birthdate, and likings..." onChange={(e)=> handleinputchange(e)} rows="4" cols="40" value={inputObj.bio} required />
                 <div className="valid-feedback">Looks Good</div>
                </div>
                
                <div className="form-group col-md-4">
-                <label htmlFor="description" className="form-label">Description: </label>
+                <label htmlFor="description" className="form-label">Description*: </label>
                 <textarea type="text" id="description" name="description" className="form-control" placeholder="Enter your description of your projessional life...
 For Example: 'I am a Full Stack Developer and I can create web pages with UI/UX interfaces. Apart from that I love doing DSA and problem-solving.'" onChange={(e)=> handleinputchange(e)} rows="4" cols="40" value={inputObj.description} required />
                 <div className="valid-feedback">Looks Good</div>
                </div>
 
                {(inputObj.profilePicture.url == null) && <div className="form-group col-md-4">
-                <label htmlFor="profilePicture" className="form-label">Profile Picture: </label>
+                <label htmlFor="profilePicture" className="form-label">Profile Picture*: </label>
                 <input type="file" id="profilePicture" name="profilePicture" className="form-control" placeholder="Enter profile picture" onChange={(e) => handleFileChange(e)} required />
                 <div className="valid-feedback">Looks Good</div>
                </div>}
@@ -66,38 +66,38 @@ For Example: 'I am a Full Stack Developer and I can create web pages with UI/UX 
                </div> }
                
                <div className="form-group col-md-4">
-                <label htmlFor="linkedIn" className="form-label">LinkedIn: </label>
+                <label htmlFor="linkedIn" className="form-label">LinkedIn*: </label>
                 <input type="text" id="linkedIn" name="linkedIn" className="form-control" placeholder="Enter linkedIn profile url" onChange={(e)=> handleinputchange(e)} value={inputObj.linkedIn} required />
                 <div className="valid-feedback">Looks Good</div>
                </div>
 
                <div className="form-group col-md-4">
-                <label htmlFor="instagram" className="form-label">Instagram: </label>
+                <label htmlFor="instagram" className="form-label">Instagram*: </label>
                 <input type="text" id="instagram" name="instagram" className="form-control" placeholder="Enter instagram profile url" onChange={(e)=> handleinputchange(e)} value={inputObj.instagram} required />
                 <div className="valid-feedback">Looks Good</div>
                </div>
 
                <div className="form-group col-md-4">
-                <label htmlFor="githubProfile" className="form-label">Github: </label>
+                <label htmlFor="githubProfile" className="form-label">Github*: </label>
                 <input type="text" id="githubProfile" name="githubProfile" className="form-control" placeholder="Enter github profile url" onChange={(e)=> handleinputchange(e)} value={inputObj.githubProfile} required />
                 <div className="valid-feedback">Looks Good</div>
                </div>
 
                <div className="form-group col-md-4">
-                <label htmlFor="telephone" className="form-label">Mobile Number: </label>
-                <input type="number" id="telephone" name="telephone" className="form-control" placeholder="Enter mobile number (whatsapp number)" onChange={(e)=> handleinputchange(e)} value={inputObj.telephone} required/>
+                <label htmlFor="telephone" className="form-label">Mobile Number*: </label>
+                <input type="number" id="telephone" name="telephone" className="form-control" placeholder="Enter mobile number (whatsapp number)" onChange={(e)=> handleinputchange(e)} value={inputObj.telephone} />
                 <div className="valid-feedback">Looks Good</div>
                </div>
 
                <div className="form-group col-md-4">
-                <label htmlFor="email" className="form-label">Email: </label>
+                <label htmlFor="email" className="form-label">Email*: </label>
                 <input type="email" id="email" name="email" className="form-control" placeholder="Enter email address" onChange={(e)=> handleinputchange(e)} value={inputObj.email} required/>
                 <div className="valid-feedback">Looks Good</div>
                </div>
 
                <MainDesignation mainDesignations={props.mainDesignations} />
                <div className="form-group col-md-4">
-               <label htmlFor={`yearsOfExperience`} className="form-label">Work Experience: </label>
+               <label htmlFor={`yearsOfExperience`} className="form-label">Work Experience*: </label>
                   <select id={`yearsOfExperience`} name="yearsOfExperience" className="form-control" onChange={ e=>handleinputchange(e)} value={inputObj.yearsOfExperience} required >
                     <option value="">Work Experience Options</option>
                     {experienceLevelOptions.map(option => (
@@ -108,7 +108,7 @@ For Example: 'I am a Full Stack Developer and I can create web pages with UI/UX 
                </div>
 
                <div className="form-group col-md-4">
-               <label htmlFor={`numberOfProjects`} className="form-label">Project Experience: </label>
+               <label htmlFor={`numberOfProjects`} className="form-label">Project Experience*: </label>
                   <select id={`numberOfProjects`} name="numberOfProjects" className="form-control" onChange={ e=>handleinputchange(e)} value={inputObj.numberOfProjects} required >
                     <option value="">Project Experience Options</option>
                     {projectNumberOptions.map(option => (

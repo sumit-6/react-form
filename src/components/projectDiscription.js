@@ -37,7 +37,7 @@ function ProjectDescription(props) {
               return(
               <div className="row" key={`projectDescription-${props.index}-${i}`}>
                  <div className="form-group col-md-4">
-                 <label htmlFor={`projectDescription_${props.index}_${i}`} className="form-label">Enter Description: </label>
+                 <label htmlFor={`projectDescription_${props.index}_${i}`} className="form-label">Enter Description*: </label>
                   <textarea type="text" id={`projectDescription_${props.index}_${i}`} name={"projectDescription"+"_"+props.index} className="form-control"  placeholder="Enter description of what you have built...
 What tech. stacks were used..." onChange={ e=>handleinputchange(e,i)} rows="4" cols="40" value={x} required/>
                   <div className="valid-feedback">Looks Good</div>

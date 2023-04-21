@@ -23,7 +23,7 @@ function Duration(props) {
               <div className="row mb-3" key={`duration-${props.index}`}>
                  <div className="form-group col-md-4">
                  <label htmlFor={`start_${props.index}`} className="form-label">
-                Start:
+                Start*:
               </label>
               <input
                 type="date"
@@ -39,7 +39,7 @@ function Duration(props) {
                
                <div className="form-group col-md-4">
                <label htmlFor={`end_${props.index}`} className="form-label">
-                End:
+                End*:
               </label>
               <input
                 type="date"

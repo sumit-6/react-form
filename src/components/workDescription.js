@@ -41,7 +41,7 @@ function WorkDescription(props) {
               <div className="row" key={`workDescription-${props.index}-${i}`}>
                 
                  <div className="form-group col-md-4">
-                 <label htmlFor={`workDescription_${props.index}_${i}`} className="form-label">Enter Description: </label>
+                 <label htmlFor={`workDescription_${props.index}_${i}`} className="form-label">Enter Description*: </label>
                   <textarea type="text" id={`workDescription_${props.index}_${i}`} name={"workDescription"+"_"+props.index} className="form-control"  placeholder="Enter description of what you did at this workplace..." onChange={ e=>handleinputchange(e,i)} rows="4" cols="40" value={x} required></textarea>
                   <div className="valid-feedback">Looks Good</div>
                </div>

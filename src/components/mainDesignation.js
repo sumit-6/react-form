@@ -32,7 +32,7 @@ function MainDesignation(props) {
               return(
               <div className="row">
                  <div className="form-group col-md-4">
-                  <label htmlFor="mainDesignation" className="form-label">Designation: </label>
+                  <label htmlFor="mainDesignation" className="form-label">Designation*: </label>
                   <input type="text" id="mainDesignation" name="mainDesignations" className="form-control"  placeholder="Full Stack Developer/Coder/App Developer/..." onChange={ e=>handleinputchange(e,i)} value={inputList[i]} required />
                   <div className="valid-feedback">Looks Good</div>
                </div>

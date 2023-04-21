@@ -36,13 +36,13 @@ function ProgrammingSkills(props) {
               <div className="row mb-3">
                 
                  <div className="form-group col-md-4">
-                 <label htmlFor={`skillName_${i}`} className="form-label">Programming Language: </label>
+                 <label htmlFor={`skillName_${i}`} className="form-label">Programming Language*: </label>
                   <input type="text" id={`skillName_${i}`} name="skillName" className="form-control"  placeholder="Enter skill name" onChange={ e=>handleinputchange(e,i)} value={x.skillName} required />
                   <div className="valid-feedback">Looks Good</div>
                </div>
 
                <div className="form-group col-md-4">
-               <label htmlFor={`skillLevel_${i}`} className="form-label">Level: </label>
+               <label htmlFor={`skillLevel_${i}`} className="form-label">Level*: </label>
                   <select id={`skillLevel_${i}`} name="skillLevel" className="form-control" onChange={ e=>handleinputchange(e,i)} value={x.skillLevel} required >
                     <option value="">Skill Level Options</option>
                     {skillLevelOptions.map(option => (

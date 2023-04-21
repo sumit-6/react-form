@@ -35,13 +35,13 @@ function ToolsAndFrameworks(props) {
               return(
               <div className="row mb-3">
                  <div className="form-group col-md-4">
-                 <label htmlFor={`toolName_${i}`} className="form-label">Tool/Framework Name: </label>
+                 <label htmlFor={`toolName_${i}`} className="form-label">Tool/Framework Name*: </label>
                   <input type="text" id={`toolName_${i}`} name="toolName" className="form-control"  placeholder="Enter tool name" onChange={ e=>handleinputchange(e,i)} value={x.toolName} required />
                   <div className="valid-feedback">Looks Good</div>
                </div>
 
                <div className="form-group col-md-4">
-               <label htmlFor={`toolLevel_${i}`} className="form-label">Level: </label>
+               <label htmlFor={`toolLevel_${i}`} className="form-label">Level*: </label>
                   <select id={`toolLevel_${i}`} name="toolLevel" className="form-control" onChange={ e=>handleinputchange(e,i)} value={x.toolLevel} required >
                     <option value="">Select Level Options</option>
                     {toolLevelOptions.map(option => (
