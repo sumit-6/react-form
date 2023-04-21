@@ -17,7 +17,8 @@ function ReactForm(props) {
   
     const config = {
       headers: {
-        'authtoken': props.token
+        'authtoken': props.token,
+        'Content-Type': 'multipart/form-data'
       },
       enctype: 'multipart/form-data'
     }
