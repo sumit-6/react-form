@@ -80,7 +80,6 @@ function MyExperience(props) {
                 <Duration index={i} duration={x.duration} onChange={handleDurationChange} data={x.duration}/>
                <div className="form-group col-md-2 mt-4">
                {
-                  inputList.length!==1 &&
                   <button  className="btn btn-danger mx-1" onClick={(e)=> handleremove(e, i)}>Remove Experience</button>
                }
                { inputList.length-1===i &&
@@ -91,11 +90,11 @@ function MyExperience(props) {
                 inputList.length-1 !== i &&
                 <hr className="col-md-12" style={{padding: '1rem'}}></hr>
                }
-            </div>
+              </div>
               );
             })}
 
-               
+       {!inputList.length && <button  className="btn btn-success m-1" onClick={ handleaddclick}>Add More Experience</button>}
        </div>
      </div>
     </Container>

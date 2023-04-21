@@ -38,7 +38,7 @@ function ReactForm(props) {
           <br></br>
           <MyEducation data={[{institutionName: "", place: "", year: "", aggregate: "", coursePursuied: ""}]}/>
           <br></br>
-          <MyExperience data={[{role: "", company: "", certificate: "", workDescription: [""], duration: {start: "", end: ""}}]}/>
+          <MyExperience data={[]} />
           <br></br>
           <MyProjects data={[{projectName: "", gitHubLink: "", projectLink: "", description: [""]}]}/>
           <br></br>
