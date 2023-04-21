@@ -13,7 +13,17 @@ function ReactForm(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = document.querySelector('.validated-form');
-    const formData = new FormData(form);
+    const formData_empty = new FormData(form);
+    const formData = {};
+    for (const key of formData_empty.entries()) {
+        if(!formData[key[0]]) formData[key[0]] = key[1];
+        else if(typeof(formData[key[0]]) !== 'object') {
+          formData[key[0]] = [formData[key[0]]];
+          formData[key[0]].push(key[1]);
+        } else {
+          formData[key[0]].push(key[1]);
+        }
+    }
   
     const config = {
       headers: {
