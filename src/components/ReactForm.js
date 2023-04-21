@@ -16,6 +16,7 @@ function ReactForm(props) {
     const formData_empty = new FormData(form);
     const formData = {};
     for (const key of formData_empty.entries()) {
+      
         if(!formData[key[0]]) formData[key[0]] = key[1];
         else if(typeof(formData[key[0]]) !== 'object') {
           formData[key[0]] = [formData[key[0]]];
