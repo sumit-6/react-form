@@ -8,8 +8,30 @@ import MyAchievements from './myAchievements';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import bsCustomFileInput from "bs-custom-file-input";
 
 function EditReactForm(props) {
+  (function () {
+    bsCustomFileInput.init();
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll(".validated-form");
+  
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(function (form) {
+      form.addEventListener(
+        "submit",
+        function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+  
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    });
+  })();
 
   const [isReady, setIsReady] = useState(false);
   const [data, setData] = useState({});
@@ -82,7 +104,7 @@ function EditReactForm(props) {
     {isReady && <div className="App">
       <header className="App-header">
       <h1 style={{color: 'black'}}><u><b>SourceFolio Form</b></u></h1>
-        <form enctype="application/json" novalidate className="validated-form">
+        <form enctype="application/json" novalidate className="validated-form" onSubmit={handleSubmit}>
           <FirstLayer name={data.name} description={data.description} bio={data.bio} yearsOfExperience={data.yearsOfExperience} numberOfProjects={data.numberOfProjects} profilePicture={data.profilePicture} githubProfile={data.githubProfile}
            linkedIn={data.linkedIn} instagram={data.instagram} telephone={data.telephone} email={data.email} mainDesignations={data.mainDesignations} token={props.token} id={props.id}/>
           <br></br>
@@ -96,7 +118,7 @@ function EditReactForm(props) {
           <MySkills data={data.mySkills}/>
           <br></br>
           <MyAchievements data={data.myAchievements}/>
-          <button onClick={handleSubmit} className="btn btn-warning btn-lg m-3">Submit</button>
+          <button type="submit" className="btn btn-warning btn-lg m-3">Submit</button>
         </form>
       </header>
     </div>}

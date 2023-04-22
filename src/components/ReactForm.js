@@ -6,10 +6,32 @@ import MyProjects from './myProjects';
 import MySkills from './mySkills';
 import MyAchievements from './myAchievements';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import bsCustomFileInput from "bs-custom-file-input";
 
 import axios from 'axios';
 
 function ReactForm(props) {
+  (function () {
+    bsCustomFileInput.init();
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll(".validated-form");
+  
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(function (form) {
+      form.addEventListener(
+        "submit",
+        function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+  
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    });
+  })();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = document.querySelector('.validated-form');
@@ -45,7 +67,7 @@ function ReactForm(props) {
     <div className="App">
       <header className="App-header">
       <h1 style={{color: 'black'}}><u><b>SourceFolio Form</b></u></h1>
-        <form encType='multipart/form-data' novalidate className="validated-form">
+        <form encType='multipart/form-data' novalidate className="validated-form" onSubmit={(e) => handleSubmit(e)}>
           <FirstLayer name='' telephone='' description='' bio='' yearsOfExperience='' numberOfProjects='' githubProfile='' instagram='' linkedIn='' email='' profilePicture={{url: null, filename: null}} mainDesignations={['']} />
           <br></br>
           <MyEducation data={[{institutionName: "", place: "", year: "", aggregate: "", coursePursuied: ""}]}/>
@@ -57,7 +79,7 @@ function ReactForm(props) {
           <MySkills data={{programmingSkills: [{skillName: "", skillLevel: ""}], toolsAndFrameworks: [{toolName: "", toolLevel: ""}]}}/>
           <br></br>
           <MyAchievements data={[""]}/>
-          <button onClick={(e) => handleSubmit(e)} className="btn btn-warning btn-lg m-3">Submit</button>
+          <button type="submit" className="btn btn-warning btn-lg m-3">Submit</button>
         </form>
       </header>
     </div>
