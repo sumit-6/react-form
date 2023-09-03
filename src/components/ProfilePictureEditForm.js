@@ -25,7 +25,7 @@ function ProfilePictureEditForm(props) {
         if(response.data === "Success") {
             window.location.href = `https://react-form-ten-steel.vercel.app/form?q=${props.token}&sfid=${props.id}&where=edit`;
         } else {
-            window.location.href = "https://source-folio-frontend.vercel.app/";
+            window.location.href = "https://source-folio.vercel.app/";
         }
       }
 

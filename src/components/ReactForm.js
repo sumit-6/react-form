@@ -58,9 +58,9 @@ function ReactForm(props) {
   
     const response = await axios.post('https://source-folio-woad.vercel.app/portfolio/insert', formData, config);
     if(response.data === "Success") {
-      window.location.href = `https://source-folio-frontend.vercel.app/`;
+      window.location.href = `https://source-folio.vercel.app/`;
     } else {
-      window.location.href = 'https://source-folio-frontend.vercel.app/';
+      window.location.href = 'https://source-folio.vercel.app/';
     }
   }
   return (

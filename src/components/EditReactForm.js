@@ -73,9 +73,9 @@ function EditReactForm(props) {
     
         const response = await axios.post(`https://source-folio-woad.vercel.app/portfolio/edit/${props.id}`, formData, config)
         if(response.data === "Success") {
-          window.location.href = `https://source-folio-frontend.vercel.app/portfolio/${props.id}`;
+          window.location.href = `https://source-folio.vercel.app/portfolio/${props.id}`;
         } else {
-          window.location.href = `https://source-folio-frontend.vercel.app/`;
+          window.location.href = `https://source-folio.vercel.app/`;
         }
       }
       catch(err) {
@@ -95,7 +95,7 @@ function EditReactForm(props) {
       if(response.data === "Success") {
         window.location.href = `https://react-form-ten-steel.vercel.app/`;
       } else {
-        window.location.href = 'https://source-folio-frontend.vercel.app/';
+        window.location.href = 'https://source-folio.vercel.app/';
       }
     }*/
     
