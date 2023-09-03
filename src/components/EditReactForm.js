@@ -39,7 +39,7 @@ function EditReactForm(props) {
   useEffect(() => {(async () => {
     
             const token = props.token;
-            const response = await axios.get(`https://source-folio-backend.onrender.com/api/portfolio/${props.id}`, {headers: {authtoken: token}});
+            const response = await axios.get(`https://source-folio-woad.vercel.app/api/portfolio/${props.id}`, {headers: {authtoken: token}});
             if(typeof(response.data) === 'object') {
               const dataRes = response.data;
               setData(dataRes);
@@ -71,7 +71,7 @@ function EditReactForm(props) {
           }
         }
     
-        const response = await axios.post(`https://source-folio-backend.onrender.com/portfolio/edit/${props.id}`, formData, config)
+        const response = await axios.post(`https://source-folio-woad.vercel.app/portfolio/edit/${props.id}`, formData, config)
         if(response.data === "Success") {
           window.location.href = `https://source-folio-frontend.vercel.app/portfolio/${props.id}`;
         } else {
@@ -91,7 +91,7 @@ function EditReactForm(props) {
         }
       }
     
-      const response = await axios.post(`https://source-folio-backend.onrender.com/portfolio/delete/${props.id}`, {}, config);
+      const response = await axios.post(`https://source-folio-woad.vercel.app/portfolio/delete/${props.id}`, {}, config);
       if(response.data === "Success") {
         window.location.href = `https://react-form-ten-steel.vercel.app/`;
       } else {
