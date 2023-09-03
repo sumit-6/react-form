@@ -21,7 +21,7 @@ function ProfilePictureEditForm(props) {
           enctype: 'multipart/form-data'
         }
       
-        const response = await axios.post(`https://source-folio-backend.onrender.com/edit/profilePicture/${props.id}`, formData, config)
+        const response = await axios.post(`https://source-folio-woad.vercel.app/edit/profilePicture/${props.id}`, formData, config)
         if(response.data === "Success") {
             window.location.href = `https://react-form-ten-steel.vercel.app/form?q=${props.token}&sfid=${props.id}&where=edit`;
         } else {
